@@ -1,0 +1,86 @@
+@import "variables";
+@import "globals";
+
+//Nav-bar
+.nav-bar {
+    background-color: $clr-primary;
+    height: 10vh;
+    width: 100vw;
+}
+
+.nav-bar-container {
+    width: 85%;
+    margin: 0 auto;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+
+    .nav-logo {
+        justify-content: left;
+        height: 100%;
+
+        .nav-img {
+            position: relative;
+            width: 60%;
+            top: 10%;
+        }
+
+        .nav-title {
+            display: none;
+        }
+
+    }
+
+    .right-side-menu {
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+.side-nav {
+    height: 50vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 50px;
+    transition: width 0.5s;
+
+    a,
+    li {
+        padding: 10px 10px 10px 30px;
+        text-decoration: none;
+        font-size: 22px;
+        color: #ccc;
+        display: block;
+        transition: 0.1s;
+
+        &:hover,
+        &:focus {
+            color: #fff;
+        }
+    }
+
+    .btn-close {
+        position: absolute;
+        top: 0;
+        left: 10px;
+        font-size: 2em;
+        color: #fff;
+    }
+
+    &.active {
+        width: 250px;
+        background-color: #111;
+    }
+}
+
+.navbar-fullscreen {
+    display: none;
+}

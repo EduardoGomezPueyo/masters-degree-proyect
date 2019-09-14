@@ -1,0 +1,31 @@
+@import "variables";
+@import "globals";
+
+/* Services section */
+.services {
+    padding: 0 10% 5%;
+    text-align: center;
+}
+
+.services-title {
+    font-size: 1.86em;
+    padding: 10% 0 5% 0;
+}
+
+.services-list {
+    padding: 10% 0;
+}
+
+.services-item {
+    font-size: 1.4em;
+    padding: 2% 0;
+    list-style: none;
+}
+
+.btn-close-list {
+    transform: rotate(45deg);
+    text-decoration: none;
+    color: #000;
+    font-size: 1.4em;
+    ;
+}

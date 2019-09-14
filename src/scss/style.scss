@@ -1,3 +1,7 @@
-body {
-    background: grey;
-}
+@import "variables";
+@import "globals";
+@import "navbar";
+@import "showcase";
+@import "team";
+@import "services";
+@import "contact";

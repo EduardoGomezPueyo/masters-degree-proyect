@@ -3,79 +3,90 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
+    <!-- <script defer src="js/main.js"></script> -->
     <title>Clínica Veterinaria San Fernando</title>
 </head>
 
 <body>
     <!-- NAV-BAR -->
     <nav class="nav-bar">
-        <div class="nav-logo">
-            <img src="images/Logo blue.png" alt="" class="nav-img">
-            <h1 class="nav-title">Clínica Veterinaria <span class="title-span">San Fernando</span></h1>
+        <div class="nav-bar-container">
+            <div class="nav-logo">
+                <img src="images/Logo white.png" alt="" class="nav-img">
+                <h1 class="nav-title"><span>Veterinaria</span><span class="title-span">San Fernando</span></h1>
+            </div>
+            <div class="right-side-menu">
+
+                <!-- Open side bar menu -->
+                <span id="open-slide">
+                    <a href="#" id="open-slide-link">
+                        <svg width="30" height="30">
+                            <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
+                            <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
+                            <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+                        </svg>
+                    </a>
+                </span>
+
+                <!-- Menu for full screens -->
+                <ul class="navbar-fullscreen">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="right-side-menu">
-
-            <!-- Open side bar menu -->
-            <span class="open-slide">
-                <a href="#" onclick="openSlideMenu()">
-                    <svg width="30" height="30">
-                        <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
-                        <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
-                        <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
-                    </svg>
-                </a>
-            </span>
-
-            <!-- Menu for full screens -->
-            <ul class="navbar-nav">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
+        <!-- Side-menu modal -->
+        <div id="side-menu" class="side-nav">
+            <a href="#" class="btn-close">&times;</a>
+            <li>Clínica Veterinaria <br>San Fernando</li>
+            <a href="#">Inicio</a>
+            <a href="#">Servicios</a>
+            <a href="#">Contacto</a>
         </div>
     </nav>
-    <!-- Side-menu modal -->
-    <div id="side-menu" class="side-nav">
-        <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-        <a href="#">Inicio</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
-    </div>
+
+
 
     <!-- SHOWCASE SLIDER SECTION -->
     <section class="showcase-slider section">
         <div class="container showcase-slider-container">
-            <div class="showcase-slide-individual">
-                <h2 class="showcase-slide-text">Cuidamos a tus compañeros</h2>
+            <div class="showcase-slide-individual ">
+                <h2 class="showcase-slide-text">Cuidamos a <br>tus compañeros</h2>
             </div>
-            <div class="showcase-slide-individual">
+            <div class="showcase-slide-individual hide">
                 <h2 class="showcase-slide-text">El amor no se compra. ¡Adopta!</h2>
                 <a href="" class="button showcase-button">Contacta</a>
             </div>
-            <div class="showcase-slide-individual">
+            <div class="showcase-slide-individual hide">
                 <h2 class="showcase-slide-text">Cuidamos a tus compañeros</h2>
             </div>
+        </div>
+        <div class="dot-container">
+            <span class="dot" name="1"></span>
+            <span class="dot" name="2"></span>
+            <span class="dot" name="3"></span>
         </div>
     </section>
 
     <!-- SERVICES SECTION -->
-    <section class="services section">
+    <section class="section services">
+        <h2 class="services-title">Nuestros Servicios</h2>
         <div class="container services-container">
-            <h2 class="services-title">Nuestros Servicios</h2>
             <ul class="services-list">
-                <li class="services-item"></li>
-                <li class="services-item"></li>
-                <li class="services-item"></li>
-                <li class="services-item"></li>
-                <li class="services-item"></li>
-                <li class="services-item"></li>
-                <li class="services-item"></li>
-                <li class="services-item"></li>
-                <li class="services-item"></li>
-                <li class="services-item"></li>
+                <li class="services-item">Servicios clínicos <a href="#" class="btn-close-list">+</a></li>
+                <li class="services-item">Consultas <a href="#" class="btn-close-list">+</a></li>
+                <li class="services-item">Ecografía <a href="#" class="btn-close-list">+</a></li>
+                <li class="services-item">Radiología <a href="#" class="btn-close-list">+</a></li>
+                <li class="services-item">Endoscopia <a href="#" class="btn-close-list">+<a></li>
+                <li class="services-item">Laboratorio <a href="#" class="btn-close-list">+</a></li>
+                <li class="services-item">Hospitalización <a href="#" class="btn-close-list">+</a></li>
+                <li class="services-item">Reminder® <a href="#" class="btn-close-list">+</a></li>
+                <li class="services-item">Asistencia a domicilio <a href="#" class="btn-close-list">+</a></li>
+                <li class="services-item">Cirugía <a href="#" class="btn-close-list">+</a></li>
             </ul>
         </div>
     </section>
@@ -87,8 +98,8 @@
             <div class="person-slider">
 
                 <div class="person-item">
-                    <img src="" alt="" class="person-img">
-                    <div class="person-info-modal">
+                    <img src="images/doctor 1.png" alt="" class="person-img">
+                    <div class="person-info-modal hide">
                         <h3 class="person-name">Armando Pañero</h3>
                         <p class="person-bio">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, eum?
@@ -96,9 +107,9 @@
                     </div>
                 </div>
 
-                <div class="person-item">
+                <div class="person-item hide">
                     <img src="" alt="" class="person-img">
-                    <div class="person-info-modal">
+                    <div class="person-info-modal ">
                         <h3 class="person-name">Julián Vázquez</h3>
                         <p class="person-bio">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, eum?
@@ -106,7 +117,7 @@
                     </div>
                 </div>
 
-                <div class="person-item">
+                <div class="person-item hide">
                     <img src="" alt="" class="person-img">
                     <div class="person-info-modal">
                         <h3 class="person-name">Miguel Ángel Escalona</h3>
@@ -115,6 +126,12 @@
                         </p>
                     </div>
                 </div>
+                <div class="dot-container">
+                    <span class="dot" name="1"></span>
+                    <span class="dot" name="2"></span>
+                    <span class="dot" name="3"></span>
+                </div>
+
             </div>
         </div>
     </section>
@@ -123,10 +140,9 @@
     <section class="section contact">
         <div class="container contact-container">
             <div class="contact-map">
-                <a href="http://">¡Llévame ahí!</a>
-                <iframe
+                <!-- <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2981.9857666260523!2d-0.883406585064411!3d41.634439088607024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd59151c24c39dc3%3A0x63bbd5425b210216!2sCl%C3%ADnica%20Veterinaria%20San%20Fernando!5e0!3m2!1ses!2ses!4v1568115320050!5m2!1ses!2ses"
-                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe> -->
             </div>
             <div class="contact-form">
                 <h2 class="contact-title">¡Contacta con nosotros!</h2>
@@ -135,8 +151,23 @@
                     <input type="email" placeholder="E-mail" name="email" id="email">
                     <textarea name="message" id="message" cols="30" rows="10"
                         placeholder="Déjanos un mensaje"></textarea>
-                    <button type="submit" name="submit" id="validate-form" class="button-form">Enviar</button>
+                    <button type="submit" name="submit" id="validate-form" class="form-btn">Enviar</button>
                 </form>
+
+                <a href="#" class="contact-map-link">¡Llévame ahí!</a>
+                <div class="contact-location">
+                    <ul class="contact-location-list">
+                        <li class="contact-location-item"><img src="images/Dirección logo.png" alt=""
+                                class="contact-img-logo"> Vía San Fernando
+                            nº 43</li>
+                        <li class="contact-location-item"><img src="images/Teléfono logo.png" alt=""
+                                class="contact-img-logo"> 976 37 11 93</li>
+                        <li class="contact-location-item"><img src="images/Mensaje logo.png" alt=""
+                                class="contact-img-logo"> test-mail@gmail.com
+                        </li>
+                    </ul>
+                    <p class="copyright">© Copyright 2019 Clínica San Fernando</p>
+                </div>
             </div>
         </div>
     </section>
