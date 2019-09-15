@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/main.js"></script>
+    <script defer type="module" src="js/main.js"></script>
+    <script defer type="module" src="js/showcase.js"></script>
     <title>Clínica Veterinaria San Fernando</title>
 </head>
 
@@ -42,8 +43,7 @@
         <!-- Side-menu modal -->
         <div id="side-menu" class="side-nav">
             <a href="#" class="btn-close">&times;</a>
-            <li>Clínica Veterinaria <br>San Fernando</li>
-            <a href="#">Inicio</a>
+            <a href="#">Equipo</a>
             <a href="#">Servicios</a>
             <a href="#">Contacto</a>
         </div>
@@ -54,21 +54,24 @@
     <!-- SHOWCASE SLIDER SECTION -->
     <section class="showcase-slider section">
         <div class="container showcase-slider-container">
-            <div class="showcase-slide-individual ">
+            <div class="showcase-slide first ">
                 <h2 class="showcase-slide-text">Cuidamos a <br>tus compañeros</h2>
             </div>
-            <div class="showcase-slide-individual hide">
+            <div class="showcase-slide second">
                 <h2 class="showcase-slide-text">El amor no se compra. ¡Adopta!</h2>
                 <a href="" class="button showcase-button">Contacta</a>
             </div>
-            <div class="showcase-slide-individual hide">
+            <div class="showcase-slide third">
                 <h2 class="showcase-slide-text">Cuidamos a tus compañeros</h2>
             </div>
+            <!-- Next/prev buttons -->
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
         </div>
         <div class="dot-container">
-            <span class="dot" name="1"></span>
-            <span class="dot" name="2"></span>
-            <span class="dot" name="3"></span>
+            <span class="dot-showcase" name="1"></span>
+            <span class="dot-showcase" name="2"></span>
+            <span class="dot-showcase" name="3"></span>
         </div>
     </section>
 

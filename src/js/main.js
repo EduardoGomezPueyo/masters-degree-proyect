@@ -1,10 +1,14 @@
-//Get elements
-const openSlide = document.querySelector("#open-slide-link");
-const closeSlide = document.querySelector(".btn-close");
-const sideMenu = document.querySelector('#side-menu');
-const closeModal = document.querySelectorAll('.btn-close-list');
-const closeModalArray = Array.from(closeModal);
+import {
+    $,
+    bindElement,
+    bindElements
+} from './utils.js';
 
+//Get DOM elements
+const openSlide = $("#open-slide-link");
+const closeSlide = $(".btn-close");
+const sideMenu = $('#side-menu');
+const closeModals = $('.btn-close-list');
 
 
 //Set functions
@@ -13,14 +17,14 @@ const closeSlideMenu = () => sideMenu.classList.remove("active");
 
 const getActive = (e) => {
     e.target.nextElementSibling.classList.toggle("active");
-    e.target.innerHTML === "+" ? e.target.innerHTML = "&times;" : e.target.innerHTML = "+";
+    e.target.innerHTML = e.target.innerHTML === "+" ? "&times;" : "+"
 };
 
 //Add functions
-openSlide.addEventListener("click", openSlideMenu);
-closeSlide.addEventListener("click", closeSlideMenu);
+bindElement(openSlide, "click", openSlideMenu);
+bindElement(closeSlide, "click", closeSlideMenu);
+bindElements(closeModals, "click", getActive);
 
 
-for (var i = 0; i < closeModalArray.length; i++) {
-    closeModalArray[i].addEventListener("click", getActive);
-}
+// Todos
+// Find a way to use toggle with the side menu

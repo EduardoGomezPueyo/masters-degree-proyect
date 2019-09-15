@@ -22,7 +22,7 @@
 
         .nav-img {
             position: relative;
-            width: 60%;
+            width: 70%;
             top: 10%;
         }
 
@@ -40,7 +40,7 @@
 }
 
 .side-nav {
-    height: 50vh;
+    height: 30vh;
     width: 0;
     position: fixed;
     z-index: 1;
@@ -56,7 +56,7 @@
     li {
         padding: 10px 10px 10px 30px;
         text-decoration: none;
-        font-size: 22px;
+        font-size: 1.8em;
         color: #ccc;
         display: block;
         transition: 0.1s;
