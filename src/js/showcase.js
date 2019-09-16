@@ -43,6 +43,3 @@ dots.forEach(dot => {
         showSlides(slideIndex = dot.getAttribute("name"))
     })
 })
-// $(".dot").on("click", function () {
-//     showSlides(slideIndex = $(this).attr("name"))
-// })

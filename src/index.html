@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script defer type="module" src="js/main.js"></script>
     <script defer type="module" src="js/showcase.js"></script>
+    <script defer type="module" src="js/team.js"></script>
     <title>Clínica Veterinaria San Fernando</title>
 </head>
 
@@ -117,9 +118,10 @@
 
     <!-- TEAM SECTION -->
     <section class="section team">
+        <h2 class="team-title">Nuestros Profesionales</h2>
         <div class="container team-container">
-            <h2 class="team-title">Nuestros Profesionales</h2>
             <div class="person-slider">
+                <a class="prev-team">&#10094;</a>
 
                 <div class="person-item">
                     <img src="images/doctor 1.png" alt="" class="person-img">
@@ -131,9 +133,9 @@
                     </div>
                 </div>
 
-                <div class="person-item hide">
+                <div class="person-item">
                     <img src="" alt="" class="person-img">
-                    <div class="person-info-modal ">
+                    <div class="person-info-modal hide">
                         <h3 class="person-name">Julián Vázquez</h3>
                         <p class="person-bio">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, eum?
@@ -141,22 +143,25 @@
                     </div>
                 </div>
 
-                <div class="person-item hide">
+                <div class="person-item">
                     <img src="" alt="" class="person-img">
-                    <div class="person-info-modal">
+                    <div class="person-info-modal hide">
                         <h3 class="person-name">Miguel Ángel Escalona</h3>
                         <p class="person-bio">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, eum?
                         </p>
                     </div>
                 </div>
-                <div class="dot-container">
-                    <span class="dot" name="1"></span>
-                    <span class="dot" name="2"></span>
-                    <span class="dot" name="3"></span>
-                </div>
-
+                <!-- Next/prev buttons -->
+                <a class="next-team">&#10095;</a>
             </div>
+
+            <div class="dot-team-container">
+                <span class="dot-team" name="1"></span>
+                <span class="dot-team" name="2"></span>
+                <span class="dot-team" name="3"></span>
+            </div>
+
         </div>
     </section>
 

@@ -4,12 +4,12 @@ const $ = element => {
 }
 
 function bindElement(element, event, callback) {
-    element.addEventListener(event, callback, false);
+    element.addEventListener(event, callback);
 }
 
 function bindElements(element, event, callback) {
     element.forEach(element => {
-        element.addEventListener(event, callback, false);
+        element.addEventListener(event, callback);
     });
 }
 

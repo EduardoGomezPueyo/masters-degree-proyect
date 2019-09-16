@@ -1,12 +1,10 @@
-@import "variables";
-@import "globals";
-@import "showcase";
-
 /* Team Section */
 .team {
-    padding: 0 10% 5%;
+    padding: 0 0 5%;
     text-align: center;
     height: 100vh;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .team-title {
@@ -15,33 +13,75 @@
 }
 
 .person-item {
+    display: none;
+    pointer-events: none;
     margin-bottom: 5%;
+
+    &.active {
+        display: block;
+    }
 }
 
 .person-slider {
+    display: flex;
     height: 70vh;
     padding: 10% 0 5%;
 }
 
 .person-img {
-    width: 259px;
-    height: 391px;
+    width: 90%;
+    height: 90%;
 }
 
 /* The dots/bullets/indicators */
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+.dot-team-container {
+    text-align: center;
+    padding: 60px 20px 20px 20px;
+
+    .dot-team {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+
+        /* Add a background color to the active dot/circle */
+        &.active,
+        &:hover {
+            background-color: #717171;
+        }
+    }
 }
 
-/* Add a background color to the active dot/circle */
-.active,
-.dot:hover {
-    background-color: #717171;
+
+
+.prev-team,
+.next-team {
+    cursor: pointer;
+    position: relative;
+    top: 50%;
+    width: auto;
+    height: 27px;
+    margin-top: -30px;
+    padding: 0 10px;
+    color: #888;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+    }
+}
+
+/* Position the "next button" to the right */
+.next-team {
+    position: relative;
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
