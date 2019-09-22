@@ -18,8 +18,19 @@
     display: none;
     width: 100%;
     min-width: 100%;
-    pointer-events: none;
+    position: relative;
+
+    &.active {
+        display: block;
+    }
 }
+
+.showcase-slide-text {
+    padding: 10% 8%;
+    font-size: 2em;
+    color: $clr-primary;
+}
+
 
 .first {
     background-image: url("../images/perro.png");
@@ -27,18 +38,53 @@
 }
 
 .second {
-    background-image: url("../images/slider 2.png");
+    background-image: url("../images/slider2.png");
+    text-align: left;
+
+    .showcase-button {
+        font-size: 1.2em;
+        position: absolute;
+        margin-left: 6%;
+        padding: 4%;
+        background-color: none;
+        color: $clr-primary;
+        border-radius: 10px;
+        border: 1px solid $clr-primary;
+        cursor: pointer;
+        z-index: 1;
+
+        &:hover {
+            border: none;
+            color: #fff;
+            background-color: $clr-primary;
+        }
+    }
 }
 
 .third {
     background-image: url("../images/slider 3.png");
+
+    .showcase-button {
+        font-size: 1.2em;
+        position: absolute;
+        margin-left: 6%;
+        padding: 4%;
+        background-color: none;
+        color: $clr-primary;
+        border-radius: 10px;
+        border: 1px solid $clr-primary;
+        cursor: pointer;
+        z-index: 1;
+
+
+        &:hover {
+            border: none;
+            color: #fff;
+            background-color: $clr-primary;
+        }
+    }
 }
 
-.showcase-slide-text {
-    padding-top: 5%;
-    padding-left: 5%;
-    font-size: 2.2em;
-}
 
 /* The dot/bullet/indicator container */
 .dot-container {
@@ -52,7 +98,7 @@
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: #aaa;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
@@ -62,10 +108,7 @@
     &:hover {
         background-color: #717171;
     }
-
 }
-
-
 
 .prev,
 .next {

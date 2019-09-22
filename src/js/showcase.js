@@ -1,45 +1,51 @@
 import {
     $,
     bindElement,
-    bindElements
 } from './utils.js';
 
 //DOM elements
 const prevBtn = $(".prev");
 const nextBtn = $(".next");
 const dots = $(".dot-showcase");
+let slides = $(".showcase-slide");
+
 
 // Functions
-function showSlides(n) {
-    let i;
-    let slides = $(".showcase-slide");
-    let dots = $(".dot-showcase");
-    if (n > slides.length) {
-        slideIndex = 1
-    }
-    if (n < 1) {
-        slideIndex = slides.length
-    }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}
-
-var slideIndex = 1;
+let slideIndex = 1;
 showSlides(slideIndex);
 
-//Add functions
+function showSlides(n) {
+    //Reset slides limits.
+    if (n > slides.length) {
+        slideIndex = 1
+    } else if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+        dots[i].classList.remove("active");
+    }
+    slides[slideIndex - 1].classList.add("active");
+    dots[slideIndex - 1].classList.add("active");
+}
 
-prevBtn.addEventListener("click", () => showSlides(slideIndex += -1));
-nextBtn.addEventListener("click", () => showSlides(slideIndex += 1));
+
+
+//Add functions
+bindElement(prevBtn, "click", () => showSlides(slideIndex += -1));
+bindElement(nextBtn, "click", () => showSlides(slideIndex += 1));
 
 dots.forEach(dot => {
-    dot.addEventListener("click", function () {
-        showSlides(slideIndex = dot.getAttribute("name"))
-    })
+    bindElement(dot, "click", () => showSlides(slideIndex = parseInt(dot.getAttribute("name"), 10)))
 })
+
+
+
+// prevBtn.addEventListener("click", () => showSlides(slideIndex += -1));
+// nextBtn.addEventListener("click", () => showSlides(slideIndex += 1));
+
+// dots.forEach(dot => {
+//     dot.addEventListener("click", function () {
+//         showSlides(slideIndex = dot.getAttribute("name"))
+//     })
+// })

@@ -14,7 +14,6 @@
 
 .person-item {
     display: none;
-    pointer-events: none;
     margin-bottom: 5%;
 
     &.active {
@@ -56,8 +55,6 @@
     }
 }
 
-
-
 .prev-team,
 .next-team {
     cursor: pointer;
@@ -84,4 +81,41 @@
     position: relative;
     right: 0;
     border-radius: 3px 0 0 3px;
+}
+
+.team-modal {
+    color: #fff;
+
+    .btn-close-modal {
+        position: fixed;
+        top: 20%;
+        left: 80%;
+        cursor: pointer;
+        font-size: 2em;
+    }
+
+    .person-name {
+        position: fixed;
+        top: 25%;
+        text-align: center;
+        font-size: 2em;
+        width: 100vw;
+    }
+
+    .person-bio {
+        position: fixed;
+        width: 100vw;
+        display: inline-block;
+        top: 30%;
+        margin: 0 auto;
+        padding: 5% 10%;
+
+
+        .person-bio-txt {
+            font-weight: 300;
+            list-style-image: url('../images/huella.png');
+            list-style-position: inside;
+            padding: 5% 0;
+        }
+    }
 }

@@ -10,13 +10,15 @@
 }
 
 .services-list {
-    padding: 10% 0;
+    padding: 5% 0 10%;
 }
 
 .services-item {
     font-size: 1.4em;
     padding: 2% 0;
     list-style: none;
+
+
 }
 
 .btn-close-list {
@@ -28,10 +30,16 @@
 }
 
 
-.hide-list {
+.list-text {
     display: none;
+    font-weight: 300;
+    text-align: left;
 
     &.active {
         display: block;
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
     }
 }

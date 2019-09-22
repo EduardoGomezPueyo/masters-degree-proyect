@@ -1,18 +1,65 @@
+// Fonts
+@font-face {
+    font-family: 'Open-Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('../fonts/open-sans-v17-latin-300.woff2')
+}
+
+@font-face {
+    font-family: 'Open-Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/open-sans-v17-latin-regular.woff2')
+}
+
 // Margin and padding reset
 *,
 *::before,
 *::after {
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: inherit;
     box-sizing: border-box;
     text-decoration: none;
 }
 
+
+// Hide class to develop
 .hide {
     display: none;
 
     &.active {
         display: block;
+    }
+}
+
+// Fade class to the animated slideshows
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
     }
 }

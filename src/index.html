@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff2"
+        href="/fonts/open-sans-v17-latin-300.woff2">
+    <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff2"
+        href="/fonts/open-sans-v17-latin-regular.woff2">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/modaly.js@0.5.2/dist/modaly.min.js"></script>
     <script defer type="module" src="js/main.js"></script>
     <script defer type="module" src="js/showcase.js"></script>
     <script defer type="module" src="js/team.js"></script>
@@ -44,9 +49,9 @@
         <!-- Side-menu modal -->
         <div id="side-menu" class="side-nav">
             <a href="#" class="btn-close">&times;</a>
-            <a href="#">Equipo</a>
-            <a href="#">Servicios</a>
-            <a href="#">Contacto</a>
+            <a id="side-services">Servicios</a>
+            <a id="side-team">Equipo</a>
+            <a id="side-contact">Contacto</a>
         </div>
     </nav>
 
@@ -55,15 +60,16 @@
     <!-- SHOWCASE SLIDER SECTION -->
     <section class="showcase-slider section">
         <div class="container showcase-slider-container">
-            <div class="showcase-slide first ">
+            <div class="showcase-slide first fade ">
                 <h2 class="showcase-slide-text">Cuidamos a <br>tus compañeros</h2>
             </div>
-            <div class="showcase-slide second">
-                <h2 class="showcase-slide-text">El amor no se compra. ¡Adopta!</h2>
-                <a href="" class="button showcase-button">Contacta</a>
+            <div class="showcase-slide second fade">
+                <h2 class="showcase-slide-text">El amor no<br> se compra</h2>
+                <a href="#" class="button showcase-button">¡Adopta!</a>
             </div>
-            <div class="showcase-slide third">
-                <h2 class="showcase-slide-text">Cuidamos a tus compañeros</h2>
+            <div class="showcase-slide third fade">
+                <h2 class="showcase-slide-text">El alimento ideal <br> para los más glotones</h2>
+                <a href="#" class="button showcase-button">Contacta</a>
             </div>
             <!-- Next/prev buttons -->
             <a class="prev">&#10094;</a>
@@ -77,39 +83,85 @@
     </section>
 
     <!-- SERVICES SECTION -->
-    <section class="section services">
+    <section class="section services" id="services">
         <h2 class="services-title">Nuestros Servicios</h2>
         <div class="container services-container">
             <ul class="services-list">
                 <li class="services-item">Servicios clínicos <a class="btn-close-list">+</a>
-                    <p class="hide-list">Lorem ipsum dolor sit amet.</p>
+                    <p class="list-text">
+                        En la Clínica Veterinaria San Fernando disponemos de los medios técnicos y el equipo humano
+                        mejor preparado para responder a las necesidades de nuestros animales de compañía. Durante más
+                        de veinticinco años nuestro objetivo ha sido garantizar la prevención y el tratamiento de las
+                        enfermedades de los pequeños de la casa con las últimas técnicas y aportaciones en medicina
+                        veterinaria.</p>
                 </li>
                 <li class="services-item">Consultas <a class="btn-close-list">+</a>
-                    <p class="hide-list">Lorem ipsum dolor sit amet.</p>
+                    <p class="list-text">La clínica cuenta con dos salas de consulta en las que visitamos a nuestros
+                        pacientes para diagnóstico rutinario o de especialidades. Planes vacunales, protocolos de
+                        desaparasitación, nutrición, comportamiento y otros aspectos de la medicina preventiva son los
+                        objetivos sobre los que incidimos en nuestras consultas diarias. Con el fin de evitar esperas
+                        prolongadas rogamos soliciten cita con antelación.
+                        <strong>Lunes a viernes:</strong> 11-13:30 & 17-20:30 <br>
+                        <strong>Sábados:</strong> 10-13
+                    </p>
                 </li>
                 <li class="services-item">Ecografía <a class="btn-close-list">+</a>
-                    <p class="hide-list">Lorem ipsum dolor sit amet.</p>
+                    <p class="list-text">Herramienta imprescindible y de elección en numerosas patologías abdominales,
+                        musculares, del aparato reproductor y circulatorio. Los diferentes modos de nuestros equipos (B,
+                        M, Dopler Color, Dopler Pulsado, Video) nos ayudan en el diagnóstico diario de las enfermedades
+                        de los pequeños.
+                    </p>
                 </li>
                 <li class="services-item">Radiología <a class="btn-close-list">+</a>
-                    <p class="hide-list">Lorem ipsum dolor sit amet.</p>
+                    <p class="list-text">Compañero inseparable del veterinario para el diagnóstico de multitud de
+                        enfermedades, la clínica está dotada con uno de los más modernos equipos de Rayos X para
+                        medicina veterinaria así como sistemas automatizados para el procesado de radiografías.
+                    </p>
                 </li>
                 <li class="services-item">Endoscopia <a class="btn-close-list">+</a>
-                    <p class="hide-list">Lorem ipsum dolor sit amet.</p>
+                    <p class="list-text">Otro de los elementos esenciales en la localización de multitud de enfermedades
+                        del tracto digestivo. La clínica dispone de un equipo de fibroendoscopia que nos ayuda en el
+                        diagnóstico de tumores, toma de biopsias y extracción de cuerpos extraños en intestino y vías
+                        respiratorias.
+                    </p>
                 </li>
                 <li class="services-item">Laboratorio <a class="btn-close-list">+</a>
-                    <p class="hide-list">Lorem ipsum dolor sit amet.</p>
+                    <p class="list-text">En nuestro laboratorio podemos hacer analíticas de forma inmediata para conocer
+                        el estado general de los pacientes o localizar patologías concretas. Serologías, Hemogramas,
+                        Microscopías... son herramientas de diagnóstico cotidianas en nuestra clínica. Contamos con
+                        apoyo externo para biopsias, hormonas y otras analíticas especiales.
+                    </p>
                 </li>
                 <li class="services-item">Hospitalización <a class="btn-close-list">+</a>
-                    <p class="hide-list">Lorem ipsum dolor sit amet.</p>
+                    <p class="list-text">Contamos con seis boxes independientes con calefacción, ventilación y
+                        evacuación individual. Aunque disponemos de jaulas de hospitalización preferimos que los
+                        pequeños ingresados tengan espacio para poder moverse y estar cómodos. Nuestros pacientes no se
+                        quejan del trato.
+                    </p>
                 </li>
                 <li class="services-item">Reminder® <a class="btn-close-list">+</a>
-                    <p class="hide-list">Lorem ipsum dolor sit amet.</p>
+                    <p class="list-text">MADRE® es el sistema informático de la clínica que de forma automatizada avisa
+                        a los dueños de las mascotas cuando han de visitarnos para vacunaciones, campañas de prevención
+                        (como leishmaniosis y filariosis), analíticas, revisiones periódicas o pruebas especiales que
+                        han de llevar a cabo nuestros pacientes. Un adelanto en comodidad para los clientes de la
+                        clínica.
+                    </p>
                 </li>
                 <li class="services-item">Asistencia a domicilio <a class="btn-close-list">+</a>
-                    <p class="hide-list">Lorem ipsum dolor sit amet.</p>
+                    <p class="list-text">Son casi veinte años los que respaldan esta veterana especialidad de la clínica
+                        y tenemos el honor de ser el servicio domiciliario más antiguo de Zaragoza. Contamos con un
+                        vehículo especialmente equipado para poder atender a nuestras mascotas en su casa o para
+                        evacuarlas a nuestro centro en caso de necesidad. Dura y a la vez gratificante actividad.
+                    </p>
                 </li>
                 <li class="services-item">Cirugía <a class="btn-close-list">+</a>
-                    <p class="hide-list">Lorem ipsum dolor sit amet.</p>
+                    <p class="list-text">Una de nuestras especialidades que nos hace sentirnos más orgullosos.
+                        Disponemos de dos quirófanos en los realizamos intervenciones quirúrgicas de todo tipo. Somos el
+                        centro de referencia en traumatología y ortopedia de varias clínicas veterinarias de Aragón
+                        estando especializados en técnicas de Fijación Externa, Placas de Osteosíntesis y cirugía
+                        articular. Modernos equipos de anestesia y monitorización garantizan el éxito en nuestras
+                        operaciones diarias.
+                    </p>
 
                 </li>
             </ul>
@@ -117,56 +169,40 @@
     </section>
 
     <!-- TEAM SECTION -->
-    <section class="section team">
+    <section class="section team" id="team">
         <h2 class="team-title">Nuestros Profesionales</h2>
         <div class="container team-container">
             <div class="person-slider">
                 <a class="prev-team">&#10094;</a>
 
-                <div class="person-item">
-                    <img src="images/doctor 1.png" alt="" class="person-img">
-                    <div class="person-info-modal hide">
-                        <h3 class="person-name">Armando Pañero</h3>
-                        <p class="person-bio">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, eum?
-                        </p>
-                    </div>
+                <div class="person-item fade">
+                    <img src="images/doctor 1.png" data-modaly-open="#modal-1" alt="asdf" class="person-img">
                 </div>
 
-                <div class="person-item">
-                    <img src="" alt="" class="person-img">
-                    <div class="person-info-modal hide">
-                        <h3 class="person-name">Julián Vázquez</h3>
-                        <p class="person-bio">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, eum?
-                        </p>
-                    </div>
+                <div class="person-item fade">
+                    <img src="images/doctor 1.png" data-modaly-open="#modal-2" alt="asdf" class="person-img">
                 </div>
 
-                <div class="person-item">
-                    <img src="" alt="" class="person-img">
-                    <div class="person-info-modal hide">
-                        <h3 class="person-name">Miguel Ángel Escalona</h3>
-                        <p class="person-bio">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, eum?
-                        </p>
-                    </div>
+                <div class="person-item fade">
+                    <img src="images/doctor 1.png" data-modaly-open="#modal-3" alt="asdf" class="person-img">
                 </div>
+
                 <!-- Next/prev buttons -->
                 <a class="next-team">&#10095;</a>
             </div>
+        </div>
 
-            <div class="dot-team-container">
-                <span class="dot-team" name="1"></span>
-                <span class="dot-team" name="2"></span>
-                <span class="dot-team" name="3"></span>
-            </div>
+        <div class="dot-team-container">
+            <span class="dot-team dot1" name="1"></span>
+            <span class="dot-team dot2" name="2"></span>
+            <span class="dot-team dot3" name="3"></span>
+        </div>
 
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
-    <section class="section contact">
+    <section class="section contact" id="contact">
         <div class="container contact-container">
             <div class="contact-map">
                 <!-- <iframe
@@ -175,7 +211,7 @@
             </div>
             <div class="contact-form">
                 <h2 class="contact-title">¡Contacta con nosotros!</h2>
-                <form action="load-database.php" method="post" name="contact" autocomplete="off" id="contact">
+                <form action="load-database.php" method="post" name="contact" autocomplete="off" id="contact-form">
                     <input type="text" placeholder="Nombre" name="name" id="name">
                     <input type="email" placeholder="E-mail" name="email" id="email">
                     <textarea name="message" id="message" cols="30" rows="10"
@@ -183,7 +219,8 @@
                     <button type="submit" name="submit" id="validate-form" class="form-btn">Enviar</button>
                 </form>
 
-                <a href="#" class="contact-map-link">¡Llévame ahí!</a>
+
+                <a href="https://goo.gl/maps/c2nhdKiYcqystByJ9" class="contact-map-link">¡Llévame ahí!</a>
                 <div class="contact-location">
                     <ul class="contact-location-list">
                         <li class="contact-location-item"><img src="images/Dirección logo.png" alt=""
@@ -195,12 +232,55 @@
                                 class="contact-img-logo"> test-mail@gmail.com
                         </li>
                     </ul>
+                </div>
+                <div class="copyright-container">
                     <p class="copyright">© Copyright 2019 Clínica San Fernando</p>
                 </div>
             </div>
         </div>
+
     </section>
 
+    <div id="modal-1" class="team-modal">
+        <a class="btn-close-modal" data-modaly-close>&times;</a>
+        <h3 class="person-name">Armando Pañero</h3>
+        <ul class="person-bio">
+            <li class="person-bio-txt">Licenciado en Veterinaria por la Universidad de Zaragoza en 1989.</li>
+            <li class="person-bio-txt">Aunque veterano en todas las especialidades de la clínica de pequeños animales
+                sus áreas de especial interés están en Cirugía de Tejidos Blandos, Traumatología, Ecografía y
+                Fibroendoscopia. Es también el responsable de los servicios de asistencia en domicilio.
+
+            </li>
+        </ul>
+
+    </div>
+    <div id="modal-2" class="team-modal">
+        <a class="btn-close-modal" data-modaly-close>&times;</a>
+        <h3 class="person-name">Julián Vázquez</h3>
+        <ul class="person-bio">
+            <li class="person-bio-txt">Licenciado en Veterinaria por la Universidad de Zaragoza en 1990.
+            </li>
+            <li class="person-bio-txt">Uno de los sólidos pilares de la clínica y experto en las diversas materias de la
+                clínica de pequeños animales. Su campo de trabajo se centra principalmente en las areas de Patologías
+                Médicas, Parasitarias e Infecciosas, Cirugía de Tejidos Blandos y Radiología.
+            </li>
+        </ul>
+    </div>
+    <div id="modal-3" class="team-modal">
+        <div class="team-modal">
+            <a class="btn-close-modal" data-modaly-close>&times;</a>
+            <h3 class="person-name">Miguel Ángel Escalona</h3>
+            <ul class="person-bio">
+                <li class="person-bio-txt">Licenciado en Veterinaria por la Universidad de Zaragoza en 1992.
+                </li>
+                <li class="person-bio-txt">Un miembro ocasional que eventualmente colabora con el equipo de la clínica
+                    gracias a su vasta experiencia en el campo de los animales de compañía. Oncología, Odontología y
+                    Traumatología son las disciplinas que demandan su mayor atención. Es un maestro en cirugía del
+                    Aparato Reproductor.
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
 
 </html>
