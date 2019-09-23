@@ -38,14 +38,3 @@ bindElement(nextBtn, "click", () => showSlides(slideIndex += 1));
 dots.forEach(dot => {
     bindElement(dot, "click", () => showSlides(slideIndex = parseInt(dot.getAttribute("name"), 10)))
 })
-
-
-
-// prevBtn.addEventListener("click", () => showSlides(slideIndex += -1));
-// nextBtn.addEventListener("click", () => showSlides(slideIndex += 1));
-
-// dots.forEach(dot => {
-//     dot.addEventListener("click", function () {
-//         showSlides(slideIndex = dot.getAttribute("name"))
-//     })
-// })

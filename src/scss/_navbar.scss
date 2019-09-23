@@ -14,13 +14,12 @@
     display: flex;
 
     .nav-logo {
-        justify-content: left;
+        display: flex;
         height: 100%;
+        align-items: center;
 
         .nav-img {
-            position: relative;
-            width: 70%;
-            top: 10%;
+            height: 75%;
         }
 
         .nav-title {

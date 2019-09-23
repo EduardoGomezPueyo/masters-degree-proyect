@@ -1,6 +1,4 @@
 - Style the whole web:
-    - Solution for the logo-img not fully showing.
     - Find a way to use toggle with the side menu.
-    - Slide menu: when clicked, close the menu or close it manually (?).
-    - Netlify form.
-    - Make a white screen apear with logo before the web loads. (work with preload-workinprogress)
+    - Send mail from the form (mailgun).
+    - Swipe animation on slideshows (swiper)

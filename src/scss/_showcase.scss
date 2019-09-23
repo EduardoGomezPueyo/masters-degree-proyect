@@ -12,7 +12,17 @@
     display: flex;
     height: 80vh;
     width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    .showcase-slide {
+        float: left;
+        width: 100vw;
+        position: relative;
+        overflow: hidden;
+    }
 }
+
 
 .showcase-slide {
     display: none;
@@ -34,11 +44,13 @@
 
 .first {
     background-image: url("../images/perro.png");
+    background-repeat: no-repeat;
 
 }
 
 .second {
     background-image: url("../images/slider2.png");
+    background-repeat: no-repeat;
     text-align: left;
 
     .showcase-button {
@@ -63,6 +75,7 @@
 
 .third {
     background-image: url("../images/slider 3.png");
+    background-repeat: no-repeat;
 
     .showcase-button {
         font-size: 1.2em;
