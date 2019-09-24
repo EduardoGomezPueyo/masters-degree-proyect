@@ -9,7 +9,8 @@
 
 .team-title {
     font-size: 1.86em;
-    padding: 10% 0 5% 0;
+    padding: 10% 0 1% 0;
+    text-align: center
 }
 
 .person-item {
@@ -85,6 +86,7 @@
 
 .team-modal {
     color: #fff;
+    z-index: 2;
 
     .btn-close-modal {
         position: fixed;
@@ -118,4 +120,25 @@
             padding: 5% 0;
         }
     }
+}
+
+.doctor-1 {
+    background-image: url("../images/doctor 1.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center
+}
+
+.doctor-2 {
+    background-image: url("../images/doctor 1.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center
+}
+
+.doctor-3 {
+    background-image: url("../images/doctor 1.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center
 }

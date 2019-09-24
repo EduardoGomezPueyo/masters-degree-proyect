@@ -1,4 +1,4 @@
 - Style the whole web:
     - Find a way to use toggle with the side menu.
     - Send mail from the form (mailgun).
-    - Swipe animation on slideshows (swiper)
+    - Fix modal problems (shows when the old team-section is deleted)

@@ -10,7 +10,15 @@
     <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff2"
         href="/fonts/open-sans-v17-latin-regular.woff2">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./images/Logo blue.ico">
+
+    <!-- Modaly -->
     <script src="https://unpkg.com/modaly.js@0.5.2/dist/modaly.min.js"></script>
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+
     <script defer type="module" src="js/main.js"></script>
     <script defer type="module" src="js/showcase.js"></script>
     <script defer type="module" src="js/team.js"></script>
@@ -58,34 +66,34 @@
 
 
     <!-- SHOWCASE SLIDER SECTION -->
-    <section class="showcase-slider section">
-        <div class="container swipe" id="slider">
-            <div class="swipe-warp  showcase-slider-container">
 
-                <div class="showcase-slide first fade ">
-                    <h2 class="showcase-slide-text">Cuidamos a <br>tus compañeros</h2>
-                </div>
-                <div class="showcase-slide second fade">
-                    <h2 class="showcase-slide-text">El amor no<br> se compra</h2>
+    <div class="swiper-container" id="slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide first">
+                <h2 class="showcase-slide-text">Cuidamos a <br>tus compañeros</h2>
+            </div>
+            <div class="swiper-slide second">
+                <div class="container-slides">
+                    <h2 class="showcase-slide-text margin-top">El amor no<br> se compra</h2>
                     <a href="#" class="button showcase-button">¡Adopta!</a>
                 </div>
-                <div class="showcase-slide third fade">
+            </div>
+            <div class="swiper-slide third">
+                <div class="container-slides">
                     <h2 class="showcase-slide-text">El alimento ideal <br> para los más glotones</h2>
                     <a href="#" class="button showcase-button">Contacta</a>
                 </div>
             </div>
-            <!-- Next/prev buttons -->
-            <a class="prev">&#10094;</a>
-            <a class="next">&#10095;</a>
+        </div>
+
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
 
 
-        </div>
-        <div class="dot-container">
-            <span class="dot-showcase" name="1"></span>
-            <span class="dot-showcase" name="2"></span>
-            <span class="dot-showcase" name="3"></span>
-        </div>
-    </section>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
 
     <!-- SERVICES SECTION -->
     <section class="section services" id="services">
@@ -95,25 +103,32 @@
                 <li class="services-item">Servicios clínicos <a class="btn-close-list">+</a>
                     <p class="list-text">
                         En la Clínica Veterinaria San Fernando disponemos de los medios técnicos y el equipo humano
-                        mejor preparado para responder a las necesidades de nuestros animales de compañía. Durante más
-                        de veinticinco años nuestro objetivo ha sido garantizar la prevención y el tratamiento de las
+                        mejor preparado para responder a las necesidades de nuestros animales de compañía. Durante
+                        más
+                        de veinticinco años nuestro objetivo ha sido garantizar la prevención y el tratamiento de
+                        las
                         enfermedades de los pequeños de la casa con las últimas técnicas y aportaciones en medicina
                         veterinaria.</p>
                 </li>
                 <li class="services-item">Consultas <a class="btn-close-list">+</a>
                     <p class="list-text">La clínica cuenta con dos salas de consulta en las que visitamos a nuestros
                         pacientes para diagnóstico rutinario o de especialidades. Planes vacunales, protocolos de
-                        desaparasitación, nutrición, comportamiento y otros aspectos de la medicina preventiva son los
-                        objetivos sobre los que incidimos en nuestras consultas diarias. Con el fin de evitar esperas
+                        desaparasitación, nutrición, comportamiento y otros aspectos de la medicina preventiva son
+                        los
+                        objetivos sobre los que incidimos en nuestras consultas diarias. Con el fin de evitar
+                        esperas
                         prolongadas rogamos soliciten cita con antelación.
                         <strong>Lunes a viernes:</strong> 11-13:30 & 17-20:30 <br>
                         <strong>Sábados:</strong> 10-13
                     </p>
                 </li>
                 <li class="services-item">Ecografía <a class="btn-close-list">+</a>
-                    <p class="list-text">Herramienta imprescindible y de elección en numerosas patologías abdominales,
-                        musculares, del aparato reproductor y circulatorio. Los diferentes modos de nuestros equipos (B,
-                        M, Dopler Color, Dopler Pulsado, Video) nos ayudan en el diagnóstico diario de las enfermedades
+                    <p class="list-text">Herramienta imprescindible y de elección en numerosas patologías
+                        abdominales,
+                        musculares, del aparato reproductor y circulatorio. Los diferentes modos de nuestros equipos
+                        (B,
+                        M, Dopler Color, Dopler Pulsado, Video) nos ayudan en el diagnóstico diario de las
+                        enfermedades
                         de los pequeños.
                     </p>
                 </li>
@@ -124,14 +139,17 @@
                     </p>
                 </li>
                 <li class="services-item">Endoscopia <a class="btn-close-list">+</a>
-                    <p class="list-text">Otro de los elementos esenciales en la localización de multitud de enfermedades
+                    <p class="list-text">Otro de los elementos esenciales en la localización de multitud de
+                        enfermedades
                         del tracto digestivo. La clínica dispone de un equipo de fibroendoscopia que nos ayuda en el
-                        diagnóstico de tumores, toma de biopsias y extracción de cuerpos extraños en intestino y vías
+                        diagnóstico de tumores, toma de biopsias y extracción de cuerpos extraños en intestino y
+                        vías
                         respiratorias.
                     </p>
                 </li>
                 <li class="services-item">Laboratorio <a class="btn-close-list">+</a>
-                    <p class="list-text">En nuestro laboratorio podemos hacer analíticas de forma inmediata para conocer
+                    <p class="list-text">En nuestro laboratorio podemos hacer analíticas de forma inmediata para
+                        conocer
                         el estado general de los pacientes o localizar patologías concretas. Serologías, Hemogramas,
                         Microscopías... son herramientas de diagnóstico cotidianas en nuestra clínica. Contamos con
                         apoyo externo para biopsias, hormonas y otras analíticas especiales.
@@ -140,20 +158,25 @@
                 <li class="services-item">Hospitalización <a class="btn-close-list">+</a>
                     <p class="list-text">Contamos con seis boxes independientes con calefacción, ventilación y
                         evacuación individual. Aunque disponemos de jaulas de hospitalización preferimos que los
-                        pequeños ingresados tengan espacio para poder moverse y estar cómodos. Nuestros pacientes no se
+                        pequeños ingresados tengan espacio para poder moverse y estar cómodos. Nuestros pacientes no
+                        se
                         quejan del trato.
                     </p>
                 </li>
                 <li class="services-item">Reminder® <a class="btn-close-list">+</a>
-                    <p class="list-text">MADRE® es el sistema informático de la clínica que de forma automatizada avisa
-                        a los dueños de las mascotas cuando han de visitarnos para vacunaciones, campañas de prevención
-                        (como leishmaniosis y filariosis), analíticas, revisiones periódicas o pruebas especiales que
+                    <p class="list-text">MADRE® es el sistema informático de la clínica que de forma automatizada
+                        avisa
+                        a los dueños de las mascotas cuando han de visitarnos para vacunaciones, campañas de
+                        prevención
+                        (como leishmaniosis y filariosis), analíticas, revisiones periódicas o pruebas especiales
+                        que
                         han de llevar a cabo nuestros pacientes. Un adelanto en comodidad para los clientes de la
                         clínica.
                     </p>
                 </li>
                 <li class="services-item">Asistencia a domicilio <a class="btn-close-list">+</a>
-                    <p class="list-text">Son casi veinte años los que respaldan esta veterana especialidad de la clínica
+                    <p class="list-text">Son casi veinte años los que respaldan esta veterana especialidad de la
+                        clínica
                         y tenemos el honor de ser el servicio domiciliario más antiguo de Zaragoza. Contamos con un
                         vehículo especialmente equipado para poder atender a nuestras mascotas en su casa o para
                         evacuarlas a nuestro centro en caso de necesidad. Dura y a la vez gratificante actividad.
@@ -161,7 +184,8 @@
                 </li>
                 <li class="services-item">Cirugía <a class="btn-close-list">+</a>
                     <p class="list-text">Una de nuestras especialidades que nos hace sentirnos más orgullosos.
-                        Disponemos de dos quirófanos en los realizamos intervenciones quirúrgicas de todo tipo. Somos el
+                        Disponemos de dos quirófanos en los realizamos intervenciones quirúrgicas de todo tipo.
+                        Somos el
                         centro de referencia en traumatología y ortopedia de varias clínicas veterinarias de Aragón
                         estando especializados en técnicas de Fijación Externa, Placas de Osteosíntesis y cirugía
                         articular. Modernos equipos de anestesia y monitorización garantizan el éxito en nuestras
@@ -174,37 +198,20 @@
     </section>
 
     <!-- TEAM SECTION -->
-    <section class="section team" id="team">
+    <div class="swiper-container">
         <h2 class="team-title">Nuestros Profesionales</h2>
-        <div class="container team-container">
-            <div class="person-slider">
-                <a class="prev-team">&#10094;</a>
-
-                <div class="person-item fade">
-                    <img src="images/doctor 1.png" data-modaly-open="#modal-1" alt="asdf" class="person-img">
-                </div>
-
-                <div class="person-item fade">
-                    <img src="images/doctor 1.png" data-modaly-open="#modal-2" alt="asdf" class="person-img">
-                </div>
-
-                <div class="person-item fade">
-                    <img src="images/doctor 1.png" data-modaly-open="#modal-3" alt="asdf" class="person-img">
-                </div>
-
-                <!-- Next/prev buttons -->
-                <a class="next-team">&#10095;</a>
-            </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide doctor-1" data-modaly-open="#modal-1"></div>
+            <div class="swiper-slide doctor-2" data-modaly-open="#modal-2"></div>
+            <div class="swiper-slide doctor-3" data-modaly-open="#modal-3"></div>
         </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
 
-        <div class="dot-team-container">
-            <span class="dot-team dot1" name="1"></span>
-            <span class="dot-team dot2" name="2"></span>
-            <span class="dot-team dot3" name="3"></span>
-        </div>
-
-        </div>
-    </section>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
 
     <!-- CONTACT SECTION -->
     <section class="section contact" id="contact">
@@ -257,8 +264,8 @@
 
             </li>
         </ul>
-
     </div>
+
     <div id="modal-2" class="team-modal">
         <a class="btn-close-modal" data-modaly-close>&times;</a>
         <h3 class="person-name">Julián Vázquez</h3>
@@ -271,6 +278,7 @@
             </li>
         </ul>
     </div>
+
     <div id="modal-3" class="team-modal">
         <div class="team-modal">
             <a class="btn-close-modal" data-modaly-close>&times;</a>
@@ -286,6 +294,8 @@
             </ul>
         </div>
     </div>
+
+
 </body>
 
 </html>
