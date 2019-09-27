@@ -1,9 +1,53 @@
 /* SLIDER SHOWCASE */
+.mobile-only {
+    @media (min-width:450px) {
+        display: none;
+    }
+
+}
+
+.swiper-container {
+    @media (min-width: 450px) {
+        padding-top: 15vh;
+    }
+}
+
 .showcase-slide-text {
     padding: 10% 8%;
     font-size: 2em;
     color: $clr-primary;
     width: 100vw;
+
+    @media (min-width: 450px) {
+        font-size: 3em;
+    }
+}
+
+.web-only-first-text {
+    @media (min-width: 450px) {
+        padding: 10% 2%;
+        width: 50%;
+        margin: 0;
+    }
+}
+
+.web-only-second-text {
+    display: none;
+
+    @media (min-width: 450px) {
+        display: blocK;
+        padding: 5% 8%;
+        width: 50%;
+        margin: 0;
+    }
+}
+
+.web-only-third-text {
+    @media (min-width: 450px) {
+        padding: 5% 8%;
+        width: 50%;
+        margin: 0;
+    }
 }
 
 .container-slides {
@@ -13,6 +57,11 @@
 .swiper-container {
     width: 100vw;
     height: 90vh;
+
+    @media (min-width: 450px) {
+        width: 98.4vw;
+        height: 70vh;
+    }
 }
 
 .swiper-slide {
@@ -39,17 +88,26 @@
 
 .first {
     background-image: url("../images/perro.png");
+
+    @media (min-width: 450px) {
+        background-image: url('../images/showcase-screen-1.png')
+    }
 }
 
 .first,
 .second,
 .third {
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .second {
     background-image: url("../images/slider2.png");
     text-align: left;
+
+    @media (min-width: 450px) {
+        background-image: url('../images/showcase-screen-2.png')
+    }
 
     .showcase-button {
         font-size: 1.2em;
@@ -62,16 +120,37 @@
         cursor: pointer;
         z-index: 1;
 
+        @media (min-width: 450px) {
+            padding: 1.5%;
+            margin-left: 8%;
+            border-radius: 10px;
+            border: 1px solid $clr-primary;
+            font-weight: bold;
+        }
+
         &:hover {
             border: none;
             color: #fff;
             background-color: $clr-primary;
+
+            @media (min-width: 450px) {
+                padding: 1.7%;
+                margin-left: 8%;
+                border-radius: 10px;
+                border: 1px solid $clr-primary;
+                font-weight: bold;
+            }
         }
     }
 }
 
 .third {
     background-image: url("../images/slider 3.png");
+
+    @media (min-width: 450px) {
+        background-image: url('../images/showcase-screen-3.png');
+        background-position: center;
+    }
 
     .showcase-button {
         font-size: 1.2em;
@@ -85,11 +164,26 @@
         cursor: pointer;
         z-index: 1;
 
+        @media (min-width: 450px) {
+            padding: 1.5%;
+            margin-left: 8%;
+            background-color: $clr-primary;
+            color: #fff;
+            font-weight: bold;
+        }
 
         &:hover {
             border: none;
             color: #fff;
             background-color: $clr-primary;
+
+            @media (min-width: 450px) {
+                padding: 1.7%;
+                margin-left: 8%;
+                border-radius: 10px;
+                border: 1px solid $clr-primary;
+                font-weight: bold;
+            }
         }
     }
 }

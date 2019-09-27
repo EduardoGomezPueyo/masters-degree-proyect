@@ -14,11 +14,33 @@ const closeModals = $('.btn-close-list');
 const positionServices = $("#services");
 const positionTeam = $("#team");
 const positionContact = $("#contact");
+const positionLanding = $("#landing");
+
 const sideTeam = $("#side-team");
 const sideServices = $("#side-services");
 const sideContact = $("#side-contact");
 
+const navInicio = $("#nav-inicio");
+const navServices = $("#nav-services");
+const navTeam = $("#nav-team");
+const navContact = $("#nav-contact");
+
+const navBar = $(".nav-bar");
+const navTitle = $(".nav-title");
+let scrollY;
+
 // ** FUNCTIONS **
+const dinamicNav = () => {
+    scrollY = window.scrollY;
+    if (scrollY != 0) {
+        navBar.classList.add("scrolled")
+        navTitle.style.display = "none";
+    } else {
+        navBar.classList.remove("scrolled")
+        navTitle.style.display = "block";
+    }
+}
+
 const openSlideMenu = () => sideMenu.classList.add("active");
 const closeSlideMenu = () => sideMenu.classList.remove("active");
 
@@ -57,3 +79,13 @@ bindElement(sideContact, "click", () => {
     scrollIt(positionContact);
     closeSlideMenu();
 })
+
+
+//Nav menu bind
+bindElement(navInicio, "click", () => scrollIt(positionLanding));
+bindElement(navServices, "click", () => scrollIt(positionServices));
+bindElement(navTeam, "click", () => scrollIt(positionTeam));
+bindElement(navContact, "click", () => scrollIt(positionContact));
+
+//Scroll navbar
+bindElement(window, "scroll", dinamicNav);

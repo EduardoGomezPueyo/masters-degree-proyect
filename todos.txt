@@ -1,4 +1,4 @@
 - Style the whole web:
-    - Find a way to use toggle with the side menu.
     - Send mail from the form (mailgun).
-    - Fix modal problems (shows when the old team-section is deleted)
+    - 100vh on showcase slide problems.
+    - Transform to desktop (finish team section)

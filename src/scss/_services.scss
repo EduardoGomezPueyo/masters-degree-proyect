@@ -1,7 +1,18 @@
 /* Services section */
 .services {
     padding: 0 10% 5%;
+    height: 90vh;
     text-align: center;
+
+    @media (min-width: 450px) {
+        height: 100vh;
+    }
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    height: 50vh;
 }
 
 .services-title {
@@ -11,6 +22,21 @@
 
 .services-list {
     padding: 5% 0 10%;
+
+    @media (min-width: 450px) {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 33%;
+        }
+    }
 }
 
 .services-item {
@@ -18,7 +44,9 @@
     padding: 2% 0;
     list-style: none;
 
-
+    @media (min-width: 450px) {
+        padding: 5% 0,
+    }
 }
 
 .btn-close-list {
@@ -34,12 +62,44 @@
     display: none;
     font-weight: 300;
     text-align: left;
+    margin: 0 auto;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 0.5s;
+    animation-name: fade;
+    animation-duration: 0.5s;
+
+
+    @media (min-width: 450px) {
+        text-align: justify;
+    }
 
     &.active {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
         -webkit-animation-name: fade;
-        -webkit-animation-duration: 1.5s;
+        -webkit-animation-duration: 0.5s;
         animation-name: fade;
-        animation-duration: 1.5s;
+        animation-duration: 0.5s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: 0.4s;
+        }
+
+        to {
+            opacity: 1s;
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0.4s;
+        }
+
+        to {
+            opacity: 1s;
+        }
     }
 }

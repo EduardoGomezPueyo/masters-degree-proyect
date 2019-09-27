@@ -36,30 +36,57 @@
     }
 }
 
-// Fade class to the animated slideshows
+.nav-scroll {
+    -webkit-animation-name: nav-scroll;
+    -webkit-animation-duration: 0.5s;
+    animation-name: nav-scroll;
+    animation-duration: 0.5s;
+}
+
+@-webkit-keyframes nav-scroll {
+    from {
+        height: 15vh;
+    }
+
+    to {
+        height: 10vh;
+    }
+}
+
+@keyframes nav-scroll {
+    from {
+        height: 15vh;
+    }
+
+    to {
+        height: 10vh;
+    }
+}
+
+
 .fade {
     -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
+    -webkit-animation-duration: 0.5s;
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 0.5s;
 }
 
 @-webkit-keyframes fade {
     from {
-        opacity: .4
+        opacity: 0.4s;
     }
 
     to {
-        opacity: 1
+        opacity: 1s;
     }
 }
 
 @keyframes fade {
     from {
-        opacity: .4
+        opacity: 0.4s;
     }
 
     to {
-        opacity: 1
+        opacity: 1s;
     }
 }
