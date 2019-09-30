@@ -32,12 +32,14 @@ let scrollY;
 // ** FUNCTIONS **
 const dinamicNav = () => {
     scrollY = window.scrollY;
-    if (scrollY != 0) {
-        navBar.classList.add("scrolled")
-        navTitle.style.display = "none";
-    } else {
-        navBar.classList.remove("scrolled")
-        navTitle.style.display = "block";
+    if (window.innerWidth > 450) {
+        if (scrollY != 0) {
+            navBar.classList.add("scrolled")
+            navTitle.style.display = "none";
+        } else {
+            navBar.classList.remove("scrolled")
+            navTitle.style.display = "block";
+        }
     }
 }
 

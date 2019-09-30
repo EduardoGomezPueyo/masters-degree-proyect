@@ -1,5 +1,6 @@
 .contact {
-    height: 100vh;
+    min-height: 100vh !important;
+    height: auto;
     padding: 0 10% 0;
 
     @media (min-width: 450px) {
@@ -49,6 +50,10 @@
     text-align: center;
 
     @media (min-width:450px) {
+        font-size: 1.4em;
+    }
+
+    @media (min-width:1360px) {
         font-size: 1.86em;
     }
 }
@@ -87,7 +92,6 @@
         text-align: center;
         justify-content: center;
 
-
         .contact-img-logo {
             margin-right: 5%;
         }
@@ -97,6 +101,12 @@
 .copyright-container {
     padding: 5% 0;
     text-align: center;
+
+    .copyright {
+        @media (min-width:450px) {
+            font-size: 0.9em;
+        }
+    }
 }
 
 
@@ -105,7 +115,8 @@
 
     @media (min-width: 450px) {
         display: block;
-        height: 100vh;
+        min-height: 100vh !important;
+        height: auto;
         width: 66%;
     }
 

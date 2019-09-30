@@ -1,27 +1,36 @@
 /* Services section */
 .services {
     padding: 0 10% 5%;
-    height: 90vh;
+    min-height: 90vh;
+    height: auto;
     text-align: center;
 
     @media (min-width: 450px) {
-        height: 100vh;
+        height: auto;
+        padding-bottom: 0;
     }
 }
 
 .services-container {
     display: flex;
     justify-content: center;
-    height: 50vh;
+    height: auto;
+
 }
 
 .services-title {
     font-size: 1.86em;
     padding: 10% 0 5% 0;
+
+    @media (min-width:450px) {
+        padding-top: 15vh;
+        padding-bottom: 0;
+    }
 }
 
 .services-list {
     padding: 5% 0 10%;
+    height: auto;
 
     @media (min-width: 450px) {
         width: 100%;
@@ -45,16 +54,23 @@
     list-style: none;
 
     @media (min-width: 450px) {
-        padding: 5% 0,
+        padding: 5% 0;
+        color: $clr-primary;
+        font-weight: bold;
     }
 }
 
 .btn-close-list {
     transform: rotate(45deg);
     text-decoration: none;
-    color: #000;
     font-size: 1.4em;
     cursor: pointer;
+    font-weight: 400;
+
+    @media (min-width: 450px) {
+        color: $clr-primary;
+
+    }
 }
 
 
@@ -63,43 +79,17 @@
     font-weight: 300;
     text-align: left;
     margin: 0 auto;
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 0.5s;
-    animation-name: fade;
-    animation-duration: 0.5s;
-
 
     @media (min-width: 450px) {
         text-align: justify;
+        color: #000;
+        font-weight: 400;
     }
 
     &.active {
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 0.5s;
-        animation-name: fade;
-        animation-duration: 0.5s;
     }
 
-    @-webkit-keyframes fade {
-        from {
-            opacity: 0.4s;
-        }
-
-        to {
-            opacity: 1s;
-        }
-    }
-
-    @keyframes fade {
-        from {
-            opacity: 0.4s;
-        }
-
-        to {
-            opacity: 1s;
-        }
-    }
 }

@@ -110,7 +110,7 @@
             <ul class="services-list">
                 <div>
                     <li class="services-item">Servicios clínicos <a class="btn-close-list">+</a>
-                        <p class="list-text">
+                        <p class="list-text fade">
                             En la Clínica Veterinaria San Fernando disponemos de los medios técnicos y el equipo humano
                             mejor preparado para responder a las necesidades de nuestros animales de compañía. Durante
                             más
@@ -120,7 +120,8 @@
                             veterinaria.</p>
                     </li>
                     <li class="services-item">Consultas <a class="btn-close-list">+</a>
-                        <p class="list-text">La clínica cuenta con dos salas de consulta en las que visitamos a nuestros
+                        <p class="list-text fade">La clínica cuenta con dos salas de consulta en las que visitamos a
+                            nuestros
                             pacientes para diagnóstico rutinario o de especialidades. Planes vacunales, protocolos de
                             desaparasitación, nutrición, comportamiento y otros aspectos de la medicina preventiva son
                             los
@@ -132,7 +133,7 @@
                         </p>
                     </li>
                     <li class="services-item">Ecografía <a class="btn-close-list">+</a>
-                        <p class="list-text">Herramienta imprescindible y de elección en numerosas patologías
+                        <p class="list-text fade">Herramienta imprescindible y de elección en numerosas patologías
                             abdominales,
                             musculares, del aparato reproductor y circulatorio. Los diferentes modos de nuestros equipos
                             (B,
@@ -144,13 +145,14 @@
                 </div>
                 <div>
                     <li class="services-item">Radiología <a class="btn-close-list">+</a>
-                        <p class="list-text">Compañero inseparable del veterinario para el diagnóstico de multitud de
+                        <p class="list-text fade">Compañero inseparable del veterinario para el diagnóstico de multitud
+                            de
                             enfermedades, la clínica está dotada con uno de los más modernos equipos de Rayos X para
                             medicina veterinaria así como sistemas automatizados para el procesado de radiografías.
                         </p>
                     </li>
                     <li class="services-item">Endoscopia <a class="btn-close-list">+</a>
-                        <p class="list-text">Otro de los elementos esenciales en la localización de multitud de
+                        <p class="list-text fade">Otro de los elementos esenciales en la localización de multitud de
                             enfermedades
                             del tracto digestivo. La clínica dispone de un equipo de fibroendoscopia que nos ayuda en el
                             diagnóstico de tumores, toma de biopsias y extracción de cuerpos extraños en intestino y
@@ -159,7 +161,8 @@
                         </p>
                     </li>
                     <li class="services-item">Laboratorio <a class="btn-close-list">+</a>
-                        <p class="list-text">En nuestro laboratorio podemos hacer analíticas de forma inmediata para
+                        <p class="list-text fade">En nuestro laboratorio podemos hacer analíticas de forma inmediata
+                            para
                             conocer
                             el estado general de los pacientes o localizar patologías concretas. Serologías, Hemogramas,
                             Microscopías... son herramientas de diagnóstico cotidianas en nuestra clínica. Contamos con
@@ -167,7 +170,7 @@
                         </p>
                     </li>
                     <li class="services-item">Hospitalización <a class="btn-close-list">+</a>
-                        <p class="list-text">Contamos con seis boxes independientes con calefacción, ventilación y
+                        <p class="list-text fade">Contamos con seis boxes independientes con calefacción, ventilación y
                             evacuación individual. Aunque disponemos de jaulas de hospitalización preferimos que los
                             pequeños ingresados tengan espacio para poder moverse y estar cómodos. Nuestros pacientes no
                             se
@@ -178,7 +181,8 @@
 
                 <div>
                     <li class="services-item">Reminder® <a class="btn-close-list">+</a>
-                        <p class="list-text">MADRE® es el sistema informático de la clínica que de forma automatizada
+                        <p class="list-text fade">MADRE® es el sistema informático de la clínica que de forma
+                            automatizada
                             avisa
                             a los dueños de las mascotas cuando han de visitarnos para vacunaciones, campañas de
                             prevención
@@ -189,7 +193,8 @@
                         </p>
                     </li>
                     <li class="services-item">Asistencia a domicilio <a class="btn-close-list">+</a>
-                        <p class="list-text">Son casi veinte años los que respaldan esta veterana especialidad de la
+                        <p class="list-text fade">Son casi veinte años los que respaldan esta veterana especialidad de
+                            la
                             clínica
                             y tenemos el honor de ser el servicio domiciliario más antiguo de Zaragoza. Contamos con un
                             vehículo especialmente equipado para poder atender a nuestras mascotas en su casa o para
@@ -197,7 +202,7 @@
                         </p>
                     </li>
                     <li class="services-item">Cirugía <a class="btn-close-list">+</a>
-                        <p class="list-text">Una de nuestras especialidades que nos hace sentirnos más orgullosos.
+                        <p class="list-text fade">Una de nuestras especialidades que nos hace sentirnos más orgullosos.
                             Disponemos de dos quirófanos en los realizamos intervenciones quirúrgicas de todo tipo.
                             Somos el
                             centro de referencia en traumatología y ortopedia de varias clínicas veterinarias de Aragón
@@ -214,10 +219,72 @@
     </section>
 
     <!-- TEAM SECTION -->
-
     <div class="swiper-container team" id="team">
-        <h2 class="team-title">Nuestros Profesionales</h2>
-        <div class="swiper-wrapper mobile-only">
+        <!-- Desktop things -->
+        <div class="container-team-desktop">
+            <h2 class="team-title">Nuestros Profesionales</h2>
+            <div class="container-team-images fade">
+                <img class="desktop-team-img no-hover" src="./images/doctor 1.png" alt="" id="first-doctor">
+                <img class="desktop-team-img no-hover" src="./images/doctor 1.png" alt="" id="second-doctor">
+                <img class="desktop-team-img no-hover" src="./images/doctor 1.png" alt="" id="third-doctor">
+            </div>
+            <div class="modal-desktop hide fade" id="first-modal-desktop">
+                <div>
+                    <img class="modal-img" src="./images/doctor 1.png" alt="">
+                </div>
+                <div class="modal-text">
+                    <a class="btn-close-modal-team" id="first-close-modal">&times;</a>
+                    <h2>Armando Pañero</h2>
+                    <ul>
+                        <li>Licenciado en Veterinaria por la Universidad de Zaragoza en 1989.</li>
+                        <li>Aunque veterano en todas las especialidades de la clínica de pequeños animales sus áreas de
+                            especial interés están en Cirugía de Tejidos Blandos, Traumatología, Ecografía y
+                            Fibroendoscopia. Es también el responsable de los servicios de asistencia en domicilio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal-desktop hide fade" id="second-modal-desktop">
+                <div>
+                    <img class="modal-img" src="./images/doctor 1.png" alt="">
+                </div>
+                <!-- Modals desktop -->
+                <div class="modal-text">
+                    <a class="btn-close-modal-team" id="second-close-modal">&times;</a>
+                    <h2>Julián Vázquez</h2>
+                    <ul>
+                        <li>Licenciado en Veterinaria por la Universidad de Zaragoza en 1990.</li>
+                        <li>Uno de los sólidos pilares de la clínica y experto en las diversas materias
+                            de la
+                            clínica de pequeños animales. Su campo de trabajo se centra principalmente en las areas de
+                            Patologías
+                            Médicas, Parasitarias e Infecciosas, Cirugía de Tejidos Blandos y Radiología.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal-desktop hide fade" id="third-modal-desktop">
+                <div>
+                    <img class="modal-img" src="./images/doctor 1.png" alt="">
+                </div>
+                <!-- Modals desktop -->
+                <div class="modal-text">
+                    <a class="btn-close-modal-team" id="third-close-modal">&times;</a>
+                    <h2>Miguel Ángel Escalona</h2>
+                    <ul>
+                        <li>Licenciado en Veterinaria por la Universidad de Zaragoza en 1992.</li>
+                        <li>Un miembro ocasional que eventualmente colabora con el equipo de la clínica gracias a su
+                            vasta experiencia en el campo de los animales de compañía. Oncología, Odontología y
+                            Traumatología son las disciplinas que demandan su mayor atención. Es un maestro en cirugía
+                            del Aparato Reproductor.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile swiper -->
+        <h2 class="team-title mobile-only">Nuestros Profesionales</h2>
+        <div class="swiper-wrapper mobile-only doctor-slide">
             <div class="swiper-slide doctor-1" data-modaly-open="#modal-1"></div>
             <div class="swiper-slide doctor-2" data-modaly-open="#modal-2"></div>
             <div class="swiper-slide doctor-3" data-modaly-open="#modal-3"></div>
@@ -228,6 +295,7 @@
 
         <!-- Add Pagination-->
         <div class="swiper-pagination mobile-only"></div>
+
     </div>
 
     <!-- CONTACT SECTION -->
@@ -275,10 +343,9 @@
         <h3 class="person-name">Armando Pañero</h3>
         <ul class="person-bio">
             <li class="person-bio-txt">Licenciado en Veterinaria por la Universidad de Zaragoza en 1989.</li>
-            <li class="person-bio-txt">Aunque veterano en todas las especialidades de la clínica de pequeños animales
-                sus áreas de especial interés están en Cirugía de Tejidos Blandos, Traumatología, Ecografía y
+            <li class="person-bio-txt">Aunque veterano en todas las especialidades de la clínica de pequeños
+                animales sus áreas de especial interés están en Cirugía de Tejidos Blandos, Traumatología, Ecografía y
                 Fibroendoscopia. Es también el responsable de los servicios de asistencia en domicilio.
-
             </li>
         </ul>
     </div>
@@ -289,8 +356,10 @@
         <ul class="person-bio">
             <li class="person-bio-txt">Licenciado en Veterinaria por la Universidad de Zaragoza en 1990.
             </li>
-            <li class="person-bio-txt">Uno de los sólidos pilares de la clínica y experto en las diversas materias de la
-                clínica de pequeños animales. Su campo de trabajo se centra principalmente en las areas de Patologías
+            <li class="person-bio-txt">Uno de los sólidos pilares de la clínica y experto en las diversas materias
+                de la
+                clínica de pequeños animales. Su campo de trabajo se centra principalmente en las areas de
+                Patologías
                 Médicas, Parasitarias e Infecciosas, Cirugía de Tejidos Blandos y Radiología.
             </li>
         </ul>
@@ -303,7 +372,8 @@
             <ul class="person-bio">
                 <li class="person-bio-txt">Licenciado en Veterinaria por la Universidad de Zaragoza en 1992.
                 </li>
-                <li class="person-bio-txt">Un miembro ocasional que eventualmente colabora con el equipo de la clínica
+                <li class="person-bio-txt">Un miembro ocasional que eventualmente colabora con el equipo de la
+                    clínica
                     gracias a su vasta experiencia en el campo de los animales de compañía. Oncología, Odontología y
                     Traumatología son las disciplinas que demandan su mayor atención. Es un maestro en cirugía del
                     Aparato Reproductor.
