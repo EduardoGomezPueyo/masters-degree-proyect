@@ -1,0 +1,21 @@
+.preload {
+    display: flex;
+    margin: 0 auto;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.text-404 {
+    font-size: 1.5em;
+    padding: 10% 0;
+}
+
+
+.link-404 {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}

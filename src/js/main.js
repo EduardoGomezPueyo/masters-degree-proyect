@@ -91,3 +91,15 @@ bindElement(navContact, "click", () => scrollIt(positionContact));
 
 //Scroll navbar
 bindElement(window, "scroll", dinamicNav);
+
+
+// Create a showcase slider
+new Swiper('.swiper-container', {
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
