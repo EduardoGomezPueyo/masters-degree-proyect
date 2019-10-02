@@ -59,7 +59,7 @@
     height: 90vh;
 
     @media (min-width: 450px) {
-        width: 98.4vw;
+        width: 100vw;
         height: 70vh;
     }
 }
@@ -195,4 +195,8 @@
 
 .swiper-pagination-bullet-active {
     background: $clr-primary;
+}
+
+.swiper-button-next {
+    right: 20px;
 }

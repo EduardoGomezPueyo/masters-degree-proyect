@@ -15,7 +15,6 @@ new Modaly("#modal-3", {
     overlay: false,
 });
 
-const closeTest = $("#close-test");
 const desktopImgsContainer = $(".container-team-images");
 const desktopImgs = $(".desktop-team-img");
 const firstModalDesktop = $("#first-doctor");
@@ -41,13 +40,6 @@ const hideImages = () => {
         element.classList.add("hide");
     })
 }
-
-/*const showImages = () => {
-    desktopImgsContainer.classList.remove("hide");
-    desktopImgs.forEach(element => {
-        element.classList.remove("hide");
-    })
-}*/
 
 const hoverImages = (e) => {
     e.target.classList.toggle("no-hover");

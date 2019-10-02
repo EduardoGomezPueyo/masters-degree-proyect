@@ -25,6 +25,10 @@
   text-decoration: none;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .hide {
   display: none;
 }
@@ -353,7 +357,7 @@
 
 @media (min-width: 450px) {
   .swiper-container {
-    width: 98.4vw;
+    width: 100vw;
     height: 70vh;
   }
 }
@@ -494,6 +498,10 @@
 
 .swiper-pagination-bullet-active {
   background: #1b75c2;
+}
+
+.swiper-button-next {
+  right: 20px;
 }
 
 /* Team Section */

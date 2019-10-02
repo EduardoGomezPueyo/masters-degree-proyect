@@ -1,4 +1,2 @@
 - Style the whole web:
-    - Send mail from the form (mailgun).
-    - 100vh on showcase slide problems.
-    - Transform to desktop (finish team section)
+    - If possible, get the device orientation lock on mobile.
