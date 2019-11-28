@@ -1,2 +1,0 @@
-- Style the whole web:
-    - If possible, get the device orientation lock on mobile.

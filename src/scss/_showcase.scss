@@ -3,13 +3,6 @@
     @media (min-width:450px) {
         display: none;
     }
-
-}
-
-.swiper-container {
-    @media (min-width: 450px) {
-        padding-top: 15vh;
-    }
 }
 
 .showcase-slide-text {
@@ -25,7 +18,6 @@
 
 .web-only-first-text {
     @media (min-width: 450px) {
-        padding: 10% 2%;
         width: 50%;
         margin: 0;
     }
@@ -56,11 +48,12 @@
 
 .swiper-container {
     width: 100vw;
-    height: 90vh;
+    height: 80vh;
 
     @media (min-width: 450px) {
         width: 100vw;
-        height: 70vh;
+        height: 75vh;
+        padding-top: 15vh;
     }
 }
 
@@ -92,10 +85,11 @@
 }
 
 .first {
-    background-image: url("../images/perro.png");
+    @include background ("../images/perro.png");
 
     @media (min-width: 450px) {
-        background-image: url('../images/showcase-screen-1.png')
+        @include background ('../images/showcase-screen-1.png');
+
     }
 }
 
@@ -107,11 +101,11 @@
 }
 
 .second {
-    background-image: url("../images/slider2.png");
+    @include background ("../images/slider2.png");
     text-align: left;
 
     @media (min-width: 450px) {
-        background-image: url('../images/showcase-screen-2.png')
+        @include background ('../images/showcase-screen-2.png')
     }
 
     .showcase-button {
@@ -120,7 +114,7 @@
         margin-left: 6%;
         padding: 4%;
         background-color: $clr-primary;
-        color: #fff;
+        color: $secondary-font-color;
         border-radius: 10px;
         cursor: pointer;
         z-index: 1;
@@ -135,7 +129,7 @@
 
         &:hover {
             border: none;
-            color: #fff;
+            color: $secondary-font-color;
             background-color: $clr-primary;
 
             @media (min-width: 450px) {
@@ -150,10 +144,10 @@
 }
 
 .third {
-    background-image: url("../images/slider 3.png");
+    @include background ("../images/slider 3.png");
 
     @media (min-width: 450px) {
-        background-image: url('../images/showcase-screen-3.png');
+        @include background ('../images/showcase-screen-3.png');
         background-position: center;
     }
 
@@ -173,13 +167,13 @@
             padding: 1.5%;
             margin-left: 8%;
             background-color: $clr-primary;
-            color: #fff;
+            color: $secondary-font-color;
             font-weight: bold;
         }
 
         &:hover {
             border: none;
-            color: #fff;
+            color: $secondary-font-color;
             background-color: $clr-primary;
 
             @media (min-width: 450px) {
@@ -198,5 +192,5 @@
 }
 
 .swiper-button-next {
-    right: 20px;
+    right: 30px;
 }

@@ -15,14 +15,13 @@
         display: flex;
     }
 
-    input {
-        padding: 5px 0;
-    }
-
     input,
     textarea {
         width: 100%;
-        margin: 1% 0;
+        margin: 0 0 1rem 0;
+        padding: 8px;
+        font-size: 1.1em;
+        font-weight: 300;
 
         &:focus {
             outline: none !important;
@@ -49,6 +48,7 @@
     font-size: 1.59em;
     text-align: center;
 
+
     @media (min-width:450px) {
         font-size: 1.4em;
     }
@@ -64,7 +64,7 @@
     display: block;
     text-decoration: none;
     font-size: 1.3em;
-    color: #000;
+    color: $clr-primary;
     text-align: center;
     padding: 5%;
 
@@ -81,11 +81,14 @@
     margin: 1% 0 5%;
     color: white;
     background-color: $clr-primary;
+    border-style: hidden;
+    box-shadow: 5px 5px 10px rgba($color: $clr-primary, $alpha: 0.4);
 }
 
 .contact-location-list {
     list-style: none;
     padding-top: 5%;
+    font-size: 1em;
 
     .contact-location-item {
         padding: 0 10% 5%;
@@ -93,7 +96,9 @@
         justify-content: center;
 
         .contact-img-logo {
+            display: none;
             margin-right: 5%;
+            size: 10px 10px;
         }
     }
 }
@@ -109,7 +114,6 @@
     }
 }
 
-
 .contact-map {
     display: none;
 
@@ -119,5 +123,39 @@
         height: auto;
         width: 66%;
     }
+}
 
+// Floating contact labels
+.floated-label-wrapper {
+    position: relative;
+
+    label {
+        background: $secondary-font-color;
+        color: $clr-primary;
+        font-size: 0.75rem;
+        font-weight: 600;
+        left: 0.75rem;
+        opacity: 0;
+        padding: 0 0.25rem;
+        position: absolute;
+        top: 2rem;
+        transition: all 0.15s ease-in;
+        z-index: -1;
+
+        input[type=text],
+        input[type=email],
+        textarea {
+            border-radius: 4px;
+            font-size: 1.75em;
+            padding: 5px;
+            margin: 0 0 0 1rem;
+        }
+
+        &.show {
+            opacity: 1;
+            top: -0.65rem;
+            z-index: 1;
+            transition: all 0.15s ease-in;
+        }
+    }
 }

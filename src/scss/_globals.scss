@@ -1,10 +1,25 @@
+//Variables
+$clr-primary: #1b75c2;
+$primary-font-color: #000;
+$secondary-font-color:#fff;
+
+//Mixins
+@mixin background ($imgpath, $repeat: no-repeat, $size: cover) {
+    background: {
+        image: url($imgpath);
+        repeat: $repeat;
+        size: $size;
+    }
+
+}
+
 // Fonts
 @font-face {
     font-family: 'Open-Sans';
     font-style: normal;
     font-weight: 300;
     font-display: swap;
-    src: url('../fonts/open-sans-v17-latin-300.woff2')
+    src: url('../../fonts/OpenSans-Light.ttf')
 }
 
 @font-face {
@@ -12,14 +27,22 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../fonts/open-sans-v17-latin-regular.woff2')
+    src: url('../../fonts/OpenSans-Regular.ttf')
+}
+
+@font-face {
+    font-family: 'Open-Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../../fonts/OpenSans-SemiBold.ttf')
 }
 
 // Margin and padding reset
 *,
 *::before,
 *::after {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open-Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -30,8 +53,19 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
 
-// Hide class to develop
+}
+
+.clickable {
+    cursor: pointer;
+
+    a {
+        color: $primary-font-color;
+    }
+}
+
 .hide {
     display: none;
 
@@ -39,34 +73,6 @@ body {
         display: block;
     }
 }
-
-.nav-scroll {
-    -webkit-animation-name: nav-scroll;
-    -webkit-animation-duration: 0.5s;
-    animation-name: nav-scroll;
-    animation-duration: 0.5s;
-}
-
-@-webkit-keyframes nav-scroll {
-    from {
-        height: 15vh;
-    }
-
-    to {
-        height: 10vh;
-    }
-}
-
-@keyframes nav-scroll {
-    from {
-        height: 15vh;
-    }
-
-    to {
-        height: 10vh;
-    }
-}
-
 
 .fade {
     -webkit-animation-name: fade;
@@ -93,4 +99,36 @@ body {
     to {
         opacity: 1
     }
+}
+
+.section-presentation {
+    display: none;
+
+    @media (min-width: 450px) {
+        display: block;
+        width: 55vw;
+        margin: 0 auto;
+        font-size: 1.2em;
+        padding-top: 1%;
+        font-weight: 400;
+        line-height: 1.375em;
+    }
+}
+
+.section-divider {
+    display: none;
+
+    @media (min-width:450px) {
+        display: block;
+        @include background ("../images/section-transition.png", no-repeat, contain);
+        height: 100px;
+        width: 100%;
+        opacity: 0.2;
+    }
+}
+
+.inverse {
+    @include background("../images/section-transition-reversed.png", no-repeat, contain);
+    transform: rotateY(180deg);
+    height: 150px;
 }

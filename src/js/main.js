@@ -5,6 +5,8 @@ import {
 } from './utils.js';
 
 // ** DOM ELEMENTS **
+
+//Menu elements
 const openSlide = $("#open-slide-link");
 const closeSlide = $(".btn-close");
 const sideMenu = $('#side-menu');
@@ -24,13 +26,24 @@ const navInicio = $("#nav-inicio");
 const navServices = $("#nav-services");
 const navTeam = $("#nav-team");
 const navContact = $("#nav-contact");
+const navLogo = $(".nav-logo");
 
 const navBar = $(".nav-bar");
 const navTitle = $(".nav-title");
 let scrollY;
 
+//Contact floating label
+let inputText = $("#full-name");
+let inputTextLabel = $("#full-name").previousElementSibling;
+let inputMail = $("#email");
+let inputMailLabel = $("#email").previousElementSibling;
+let inputMessage = $("#message");
+let inputMessageLabel = $("#message").previousElementSibling;
+
 // ** FUNCTIONS **
-const dinamicNav = () => {
+
+// Dynamic nav
+const dynamicNav = () => {
     scrollY = window.scrollY;
     if (window.innerWidth > 450) {
         if (scrollY != 0) {
@@ -43,22 +56,43 @@ const dinamicNav = () => {
     }
 }
 
+// Mobile menu nav
 const openSlideMenu = () => sideMenu.classList.add("active");
 const closeSlideMenu = () => sideMenu.classList.remove("active");
 
-const getActive = (e) => {
-    e.target.nextElementSibling.classList.toggle("active");
-    e.target.innerHTML = e.target.innerHTML === "+" ? "&times;" : "+"
-};
-
-
-//Scroll Function
+// Scroll Function
 function scrollIt(element) {
     window.scrollTo({
         'behavior': 'smooth',
         'left': 0,
         'top': element.offsetTop
     });
+}
+
+const getActive = e => {
+    e.target.nextElementSibling.classList.toggle("active");
+    e.target.innerHTML = e.target.innerHTML === "+" ? "&times;" : "+"
+};
+
+// Create a showcase slider
+new Swiper('.swiper-container', {
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+
+// Contact floating label functions
+function floatingLabel(element) {
+    let testValue = element.nextElementSibling.value;
+    if (testValue != '') {
+        element.classList.add("show");
+    } else {
+        element.classList.remove("show");
+    }
 }
 
 
@@ -85,21 +119,15 @@ bindElement(sideContact, "click", () => {
 
 //Nav menu bind
 bindElement(navInicio, "click", () => scrollIt(positionLanding));
+bindElement(navLogo, "click", () => scrollIt(positionLanding));
 bindElement(navServices, "click", () => scrollIt(positionServices));
 bindElement(navTeam, "click", () => scrollIt(positionTeam));
 bindElement(navContact, "click", () => scrollIt(positionContact));
 
 //Scroll navbar
-bindElement(window, "scroll", dinamicNav);
+bindElement(window, "scroll", dynamicNav);
 
-
-// Create a showcase slider
-new Swiper('.swiper-container', {
-    pagination: {
-        el: '.swiper-pagination',
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-});
+//Contact floating
+bindElement(inputText, "keyup", () => floatingLabel(inputTextLabel));
+bindElement(inputMail, "keyup", () => floatingLabel(inputMailLabel));
+bindElement(inputMessage, "keyup", () => floatingLabel(inputMessageLabel));

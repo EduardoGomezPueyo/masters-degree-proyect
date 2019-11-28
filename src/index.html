@@ -25,12 +25,13 @@
     <link rel="stylesheet" href="css/style.css">
     <script defer type="module" src="js/main.js"></script>
     <script defer type="module" src="js/team.js"></script>
+    <script defer type="module" src="js/underline.js"></script>
     <title>Clínica Veterinaria San Fernando</title>
 </head>
 
 <body>
     <!-- NAV-BAR -->
-    <nav class="nav-bar">
+    <nav class="nav-bar" data-active-tab="A">
         <div class="nav-bar-container" id="landing">
             <div class="nav-logo">
                 <img src="images/Logo white.png" alt="" class="nav-img">
@@ -41,11 +42,15 @@
             <!-- Menu for full screens -->
             <div class="navbar-fullscreen-container">
                 <ul class="navbar-fullscreen">
-                    <li class="navbar-fullscreen-item"><a id="nav-inicio">Inicio</a></li>
-                    <li class="navbar-fullscreen-item"><a id="nav-services">Servicios</a></li>
-                    <li class="navbar-fullscreen-item"><a id="nav-team">Equipo</a></li>
-                    <li class="navbar-fullscreen-item"><a id="nav-contact">Contacto</a></li>
+                    <li class="navbar-fullscreen-item"><a class="navbar-span" id="nav-inicio"><span>Inicio</span></a>
+                    </li>
+                    <li class="navbar-fullscreen-item"><a class="navbar-span"
+                            id="nav-services"><span>Servicios</span></a></li>
+                    <li class="navbar-fullscreen-item"><a class="navbar-span" id="nav-team"><span>Equipo</span></a></li>
+                    <li class="navbar-fullscreen-item"><a class="navbar-span" id="nav-contact"><span>Contacto</span></a>
+                    </li>
                 </ul>
+                <span class="underline"></span>
             </div>
 
             <div class="right-side-menu">
@@ -105,9 +110,17 @@
         <div class="swiper-pagination"></div>
     </div>
 
+    <!-- Divider -->
+    <div class="section-divider inverse"></div>
+
     <!-- SERVICES SECTION -->
     <section class="section services" id="services">
-        <h2 class="services-title">Nuestros Servicios</h2>
+        <h2 class="services-title"><span class="services-title-after">Nuestros Servicios</span></h2>
+        <p class="section-presentation">
+            La Clínica Veterianaria San Fernando cuenta con los mejores medios técnicos, y por supuesto, el personal más
+            preparado, para responder a las necesidades de nuestros pacientes. Las últimas técnicas y las aportaciones
+            más innovadoras ayudan en el tratamiento y prevenció de las enfermedades de los pequeños de la casa.
+        </p>
         <div class="container services-container">
             <ul class="services-list">
                 <div>
@@ -220,15 +233,28 @@
         </div>
     </section>
 
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
     <!-- TEAM SECTION -->
     <div class="swiper-container team" id="team">
         <!-- Desktop things -->
         <div class="container-team-desktop">
-            <h2 class="team-title">Nuestros Profesionales</h2>
+            <h2 class="team-title"><span class="team-title-after">Nuestros Profesionales</span></h2>
+            <p class="section-presentation" id="team-presentation">
+                En la Clínica Veterianaria San Fernando experiencia y profesionalidad son dos pilares que cada
+                veterinario de la clínica tiene en cuenta en el ejercicio de su trabajo. Para la prevención y
+                tratamiento de los más pequeños de la casa, formación y tecnología son las claves en el día a día de
+                este equipo referente de la Veterinaria en Zaragoza.
+            </p>
+            <div id="modal-name"></div>
             <div class="container-team-images fade">
-                <img class="desktop-team-img no-hover" src="./images/doctor 1.png" alt="" id="first-doctor">
-                <img class="desktop-team-img no-hover" src="./images/doctor 1.png" alt="" id="second-doctor">
-                <img class="desktop-team-img no-hover" src="./images/doctor 1.png" alt="" id="third-doctor">
+                <img class="desktop-team-img no-hover" src="./images/doctor 1.png" alt="" id="first-doctor"
+                    name="Armando Pañero">
+                <img class="desktop-team-img no-hover" src="./images/doctor 1.png" alt="" id="second-doctor"
+                    name="Julián Vázquez">
+                <img class="desktop-team-img no-hover" src="./images/doctor 1.png" alt="" id="third-doctor"
+                    name="Miguel Ángel Escalona">
             </div>
             <div class="modal-desktop hide fade" id="first-modal-desktop">
                 <div>
@@ -236,7 +262,7 @@
                 </div>
                 <div class="modal-text">
                     <a class="btn-close-modal-team" id="first-close-modal">&times;</a>
-                    <h2>Armando Pañero</h2>
+                    <h2><span>Armando Pañero</span></h2>
                     <ul>
                         <li>Licenciado en Veterinaria por la Universidad de Zaragoza en 1989.</li>
                         <li>Aunque veterano en todas las especialidades de la clínica de pequeños animales sus áreas de
@@ -253,7 +279,7 @@
                 <!-- Modals desktop -->
                 <div class="modal-text">
                     <a class="btn-close-modal-team" id="second-close-modal">&times;</a>
-                    <h2>Julián Vázquez</h2>
+                    <h2><span>Julián Vázquez</span></h2>
                     <ul>
                         <li>Licenciado en Veterinaria por la Universidad de Zaragoza en 1990.</li>
                         <li>Uno de los sólidos pilares de la clínica y experto en las diversas materias
@@ -272,7 +298,7 @@
                 <!-- Modals desktop -->
                 <div class="modal-text">
                     <a class="btn-close-modal-team" id="third-close-modal">&times;</a>
-                    <h2>Miguel Ángel Escalona</h2>
+                    <h2><span>Miguel Ángel Escalona</span> </h2>
                     <ul>
                         <li>Licenciado en Veterinaria por la Universidad de Zaragoza en 1992.</li>
                         <li>Un miembro ocasional que eventualmente colabora con el equipo de la clínica gracias a su
@@ -286,18 +312,19 @@
 
         <!-- Mobile swiper -->
         <h2 class="team-title mobile-only">Nuestros Profesionales</h2>
-        <div class="swiper-wrapper mobile-only doctor-slide">
-            <div class="swiper-slide doctor-1" data-modaly-open="#modal-1"></div>
-            <div class="swiper-slide doctor-2" data-modaly-open="#modal-2"></div>
-            <div class="swiper-slide doctor-3" data-modaly-open="#modal-3"></div>
+        <div class="swiper-container mobile-only">
+            <div class="swiper-wrapper mobile-only doctor-slide">
+                <div class="swiper-slide doctor-1" data-modaly-open="#modal-1"></div>
+                <div class="swiper-slide doctor-2" data-modaly-open="#modal-2"></div>
+                <div class="swiper-slide doctor-3" data-modaly-open="#modal-3"></div>
+            </div>
+            <!--  Add Arrows-->
+            <div class="swiper-button-next mobile-only"></div>
+            <div class="swiper-button-prev mobile-only"></div>
+
+            <!-- Add Pagination-->
+            <div class="swiper-pagination mobile-only"></div>
         </div>
-        <!--  Add Arrows-->
-        <div class="swiper-button-next mobile-only"></div>
-        <div class="swiper-button-prev mobile-only"></div>
-
-        <!-- Add Pagination-->
-        <div class="swiper-pagination mobile-only"></div>
-
     </div>
 
     <!-- CONTACT SECTION -->
@@ -311,15 +338,25 @@
             <div class="contact-form">
                 <h2 class="contact-title">¡Contacta con nosotros!</h2>
                 <form method="post" data-netlify="true" name="contact" autocomplete="off" id="contact-form">
-                    <input type="text" placeholder="Nombre" name="name" id="name" required>
-                    <input type="email" placeholder="E-mail" name="email" id="email" required>
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Déjanos un mensaje"
-                        required></textarea>
+                    <div class="floated-label-wrapper">
+                        <label for="full-name">Nombre</label>
+                        <input type="text" id="full-name" name="full name input" placeholder="Nombre" required>
+                    </div>
+                    <div class="floated-label-wrapper">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="floated-label-wrapper">
+                        <label for="Mensaje">Mensaje</label>
+                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Déjanos un mensaje"
+                            required></textarea>
+                    </div>
                     <button type="submit" name="submit" id="validate-form" class="form-btn">Enviar</button>
                 </form>
 
 
-                <a href="https://goo.gl/maps/c2nhdKiYcqystByJ9" class="contact-map-link">¡Llévame ahí!</a>
+                <a href="https://goo.gl/maps/c2nhdKiYcqystByJ9" class="contact-map-link"> <strong>&rArr; ¡Llévame ahí!
+                        &lArr;</strong></a>
                 <div class="contact-location">
                     <ul class="contact-location-list">
                         <li class="contact-location-item"><img src="images/Dirección logo.png" alt=""
@@ -327,8 +364,9 @@
                             nº 43</li>
                         <li class="contact-location-item"><img src="images/Teléfono logo.png" alt=""
                                 class="contact-img-logo"> 976 37 11 93</li>
-                        <li class="contact-location-item"><img src="images/Mensaje logo.png" alt=""
-                                class="contact-img-logo"> test-mail@gmail.com
+                        <li class="contact-location-item clickable"><a href="mailto:test-mail@gmail.com"><img
+                                    src="images/Mensaje logo.png" alt="" class="contact-img-logo">
+                                test-mail@gmail.com</a>
                         </li>
                     </ul>
                 </div>

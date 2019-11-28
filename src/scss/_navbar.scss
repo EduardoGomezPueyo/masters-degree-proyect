@@ -33,12 +33,12 @@
         align-items: center;
         width: 50vw;
 
-
         .nav-img {
             height: 65%;
 
             @media (min-width:450px) {
-                content: url("../images/logo blue.png")
+                content: url("../images/logo blue.png");
+                cursor: pointer;
             }
         }
 
@@ -99,7 +99,7 @@
 
         &:hover,
         &:focus {
-            color: #fff;
+            color: $secondary-font-color;
         }
     }
 
@@ -108,7 +108,7 @@
         top: 0;
         left: 10px;
         font-size: 2em;
-        color: #fff;
+        color: $secondary-font-color;
     }
 
     &.active {
@@ -136,9 +136,8 @@
     }
 
     @media (min-width: 1360px) {
-        font-size: 1em;
+        font-size: 1.1em;
     }
-
 
     .navbar-fullscreen-item {
         padding-left: 2em;
@@ -151,24 +150,28 @@
             position: relative;
             display: inline-block;
             padding-bottom: 3%;
-
-            &:after {
-                background: none repeat scroll 0 0 transparent;
-                bottom: 0;
-                content: "";
-                display: block;
-                height: 2px;
-                left: 50%;
-                position: absolute;
-                background: $clr-primary;
-                transition: width 0.3s ease 0s, left 0.3s ease 0s;
-                width: 0;
-            }
-
-            &:hover:after {
-                width: 100%;
-                left: 0
-            }
         }
+    }
+}
+
+.underline {
+    position: absolute;
+    bottom: 10;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background-color: $clr-primary;
+    transition-property: transform, left, background-color;
+    transition-duration: 0.3s;
+    transform-origin: 0;
+    transform: translate3d(0, 0, 0) scaleX(0);
+    opacity: 0;
+    animation: smoothtransition .2s forwards;
+    animation-delay: .2s;
+}
+
+@keyframes smoothtransition {
+    to {
+        opacity: 1;
     }
 }
