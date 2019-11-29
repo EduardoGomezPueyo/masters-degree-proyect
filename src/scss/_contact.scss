@@ -1,15 +1,17 @@
 .contact {
     min-height: 100vh !important;
     height: auto;
-    padding: 10% 10% 0;
+    padding: 0% 10% 0;
 
     @media (min-width: 450px) {
+        height: 100vh;
         padding: 0;
     }
 }
 
 .contact-container {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
 
     @media (min-width:450px) {
         display: flex;
@@ -27,6 +29,14 @@
             outline: none !important;
             border: 1px solid $clr-primary;
             box-shadow: 0 0 10px #719ECE;
+        }
+    }
+
+    textarea {
+        height: 8em;
+
+        @media (min-width:450px) {
+            height: 10em;
         }
     }
 }
@@ -91,7 +101,7 @@
     font-size: 1em;
 
     .contact-location-item {
-        padding: 0 10% 5%;
+        padding: 0 10% 2%;
         text-align: center;
         justify-content: center;
 
@@ -104,11 +114,12 @@
 }
 
 .copyright-container {
-    padding: 5% 0;
+    padding: 5% 0 0;
     text-align: center;
 
     .copyright {
         @media (min-width:450px) {
+            padding: 5% 0;
             font-size: 0.9em;
         }
     }

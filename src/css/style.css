@@ -566,12 +566,18 @@ a {
 
 /* Team Section */
 .team {
-  padding: 0 0 5%;
+  padding: 0 0 10%;
   text-align: center;
   min-height: 100vh !important;
   height: auto;
   width: 100%;
   margin: 0 auto;
+}
+
+@media (min-width: 450px) {
+  .team {
+    padding: 0 0 5%;
+  }
 }
 
 .team-title {
@@ -1013,17 +1019,19 @@ a {
 .contact {
   min-height: 100vh !important;
   height: auto;
-  padding: 10% 10% 0;
+  padding: 0% 10% 0;
 }
 
 @media (min-width: 450px) {
   .contact {
+    height: 100vh;
     padding: 0;
   }
 }
 
 .contact-container {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
 }
 
 @media (min-width: 450px) {
@@ -1049,6 +1057,16 @@ a {
   border: 1px solid #1b75c2;
   -webkit-box-shadow: 0 0 10px #719ECE;
           box-shadow: 0 0 10px #719ECE;
+}
+
+.contact-container textarea {
+  height: 8em;
+}
+
+@media (min-width: 450px) {
+  .contact-container textarea {
+    height: 10em;
+  }
 }
 
 .contact-form {
@@ -1123,7 +1141,7 @@ a {
 }
 
 .contact-location-list .contact-location-item {
-  padding: 0 10% 5%;
+  padding: 0 10% 2%;
   text-align: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -1137,12 +1155,13 @@ a {
 }
 
 .copyright-container {
-  padding: 5% 0;
+  padding: 5% 0 0;
   text-align: center;
 }
 
 @media (min-width: 450px) {
   .copyright-container .copyright {
+    padding: 5% 0;
     font-size: 0.9em;
   }
 }
