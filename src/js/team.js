@@ -90,6 +90,7 @@ bindElements(imagesTeam, "mouseover", getName);
 // + Use it to hide images above, see if that works
 const teamSection = $(".team");
 const contactFormElements = $("#contact-form").elements;
+const contactTitle = $(".contact-title");
 
 function isFocused() {
     for (let i = 0; i < contactFormElements.length; i++) {
@@ -119,5 +120,15 @@ function removeImages(e) {
 }
 
 console.log(contactFormElements);
-bindElements(Array.from(contactFormElements), "focus", removeImages);
-bindElements(Array.from(contactFormElements), "blur", removeImages);
+bindElements(Array.from(contactFormElements), "focus", () => {
+    removeImages;
+    if (window.innerWidth < 450) {
+        contactTitle.style.padding = "5% 0"
+    };
+});
+bindElements(Array.from(contactFormElements), "blur", () => {
+    removeImages
+    if (window.innerWidth < 450) {
+        contactTitle.style.padding = "0"
+    }
+});
