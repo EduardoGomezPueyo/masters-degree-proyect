@@ -1013,7 +1013,7 @@ a {
 .contact {
   min-height: 100vh !important;
   height: auto;
-  padding: 0 10% 0;
+  padding: 10% 10% 0;
 }
 
 @media (min-width: 450px) {
