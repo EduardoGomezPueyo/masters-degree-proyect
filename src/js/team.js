@@ -112,23 +112,16 @@ function isFocused() {
 isFocused();
 
 function removeImages(e) {
-    if (e.target.focused) {
-        teamSection.classList.add("hide");
-    } else {
-        teamSection.classList.remove("hide");
+    if (window.innerWidth < 450) {
+        if (e.target.focused) {
+            teamSection.classList.add("hide");
+            contactTitle.style.padding = "10% 0";
+        } else {
+            teamSection.classList.remove("hide");
+            contactTitle.style.padding = "0";
+        }
     }
 }
 
-console.log(contactFormElements);
-bindElements(Array.from(contactFormElements), "focus", () => {
-    removeImages();
-    if (window.innerWidth < 450) {
-        contactTitle.style.padding = "5% 0"
-    };
-});
-bindElements(Array.from(contactFormElements), "blur", () => {
-    removeImages()
-    if (window.innerWidth < 450) {
-        contactTitle.style.padding = "0"
-    }
-});
+bindElements(Array.from(contactFormElements), "focus", removeImages);
+bindElements(Array.from(contactFormElements), "blur", removeImages);
