@@ -122,13 +122,9 @@ function removeImages(e) {
 console.log(contactFormElements);
 bindElements(Array.from(contactFormElements), "focus", () => {
     removeImages;
-    if (window.innerWidth < 450) {
-        contactTitle.style.padding = "5% 0"
-    };
+    contactTitle.style.padding = "5% 0"
 });
 bindElements(Array.from(contactFormElements), "blur", () => {
     removeImages
-    if (window.innerWidth < 450) {
-        contactTitle.style.padding = "0"
-    }
+    contactTitle.style.padding = "0"
 });
