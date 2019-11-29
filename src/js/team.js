@@ -81,3 +81,43 @@ bindElement(thirdModalDesktop, "click", () => {
 });
 
 bindElements(imagesTeam, "mouseover", getName);
+
+
+
+//Test hide while doing an input in the contact form
+
+// + Check if some input is focused
+// + Use it to hide images above, see if that works
+const teamSection = $(".team");
+const contactFormElements = $("#contact-form").elements;
+
+function isFocused() {
+    for (let i = 0; i < contactFormElements.length; i++) {
+        let elem = contactFormElements[i];
+        elem.focused = false;
+
+        elem.onfocus = function () {
+            this.focused = true;
+        };
+        elem.onblur = function () {
+            this.focused = false;
+        };
+
+        elem.hasFocus = function () {
+            return this.focused;
+        };
+    }
+}
+isFocused();
+
+function removeImages(e) {
+    if (e.target.focused) {
+        teamSection.classList.add("hide");
+    } else {
+        teamSection.classList.remove("hide");
+    }
+}
+
+console.log(contactFormElements);
+bindElements(Array.from(contactFormElements), "focus", removeImages);
+bindElements(Array.from(contactFormElements), "blur", removeImages);
