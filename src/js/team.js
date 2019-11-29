@@ -115,10 +115,8 @@ function removeImages(e) {
     if (window.innerWidth < 450) {
         if (e.target.focused) {
             teamSection.classList.add("hide");
-            servicesSection.style.paddingBottom = "20%";
         } else {
             teamSection.classList.remove("hide");
-            servicesSection.style.paddingBottom = "5%";
         }
     }
 }
