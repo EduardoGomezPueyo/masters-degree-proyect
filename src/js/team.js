@@ -27,6 +27,10 @@ const nameDiv = $("#modal-name");
 const imagesTeam = $(".no-hover");
 const teamParagraph = $("#team-presentation");
 
+// Elements to hide on contact focus
+const teamSection = $(".team");
+const contactFormElements = $("#contact-form").elements;
+
 // Functions desktop
 const openModals = (element) => {
     element.classList.remove("hide")
@@ -61,37 +65,7 @@ function getName(e) {
     nameDiv.innerHTML = content;
 }
 
-//Bind elements Desktop
-bindElements(desktopImgs, "mouseover", hoverImages);
-bindElements(desktopImgs, "mouseout", hoverImages);
-bindElements(closeModals, "click", (element) => {
-    closeModal(element);
-});
-bindElement(firstModalDesktop, "click", () => {
-    openModals($("#first-modal-desktop"));
-    hideImages();
-});
-bindElement(secondModalDesktop, "click", () => {
-    openModals($("#second-modal-desktop"));
-    hideImages();
-});
-bindElement(thirdModalDesktop, "click", () => {
-    openModals($("#third-modal-desktop"));
-    hideImages();
-});
-
-bindElements(imagesTeam, "mouseover", getName);
-
-
-
-//Test hide while doing an input in the contact form
-
-// + Check if some input is focused
-// + Use it to hide images above, see if that works
-const teamSection = $(".team");
-const contactFormElements = $("#contact-form").elements;
-const servicesSection = $(".services");
-
+//Get focus status and apply styles
 function isFocused() {
     for (let i = 0; i < contactFormElements.length; i++) {
         let elem = contactFormElements[i];
@@ -121,5 +95,27 @@ function removeImages(e) {
     }
 }
 
+//Bind elements Desktop
+bindElements(desktopImgs, "mouseover", hoverImages);
+bindElements(desktopImgs, "mouseout", hoverImages);
+bindElements(closeModals, "click", (element) => {
+    closeModal(element);
+});
+bindElement(firstModalDesktop, "click", () => {
+    openModals($("#first-modal-desktop"));
+    hideImages();
+});
+bindElement(secondModalDesktop, "click", () => {
+    openModals($("#second-modal-desktop"));
+    hideImages();
+});
+bindElement(thirdModalDesktop, "click", () => {
+    openModals($("#third-modal-desktop"));
+    hideImages();
+});
+
+bindElements(imagesTeam, "mouseover", getName);
+
+//Hide images while contact is focused
 bindElements(Array.from(contactFormElements), "focus", removeImages);
 bindElements(Array.from(contactFormElements), "blur", removeImages);
