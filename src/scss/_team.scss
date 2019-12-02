@@ -106,26 +106,28 @@
     }
 }
 
+@mixin background ($imgpath, $repeat: no-repeat, $size: cover) {
+    background: {
+        image: url($imgpath);
+        repeat: $repeat;
+        size: $size;
+    }
+}
+
 .doctor-1 {
-    background-image: url("../images/doctor 1.png");
-    background-size: 90%;
-    background-repeat: no-repeat;
+    @include background ("../images/armando-pañero.png", no-repeat, 85%);
     background-position: center;
     transform: translateY(-8%);
 }
 
 .doctor-2 {
-    background-image: url("../images/doctor 1.png");
-    background-size: 90%;
-    background-repeat: no-repeat;
+    @include background ("../images/julian-vazquez.png", no-repeat, 100%);
     background-position: center;
     transform: translateY(-8%);
 }
 
 .doctor-3 {
-    background-image: url("../images/doctor 1.png");
-    background-size: 90%;
-    background-repeat: no-repeat;
+    @include background ("../images/miguel-escalona.png", no-repeat, 85%);
     background-position: center;
     transform: translateY(-8%);
 }
