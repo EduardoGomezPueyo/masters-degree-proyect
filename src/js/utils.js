@@ -1,3 +1,4 @@
+//Functions to speed up work
 const $ = element => {
     const elements = document.querySelectorAll(element);
     return elements.length === 1 ? elements[0] : elements;

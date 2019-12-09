@@ -106,14 +106,6 @@
     }
 }
 
-@mixin background ($imgpath, $repeat: no-repeat, $size: cover) {
-    background: {
-        image: url($imgpath);
-        repeat: $repeat;
-        size: $size;
-    }
-}
-
 .doctor-1 {
     @include background ("../images/armando-pañero.png", no-repeat, 85%);
     background-position: center;

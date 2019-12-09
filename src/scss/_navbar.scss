@@ -166,11 +166,11 @@
     transform-origin: 0;
     transform: translate3d(0, 0, 0) scaleX(0);
     opacity: 0;
-    animation: smoothtransition .2s forwards;
+    animation: smoothTransition .2s forwards;
     animation-delay: .2s;
 }
 
-@keyframes smoothtransition {
+@keyframes smoothTransition {
     to {
         opacity: 1;
     }

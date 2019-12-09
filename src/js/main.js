@@ -39,6 +39,22 @@ const navBar = $(".nav-bar");
 const navTitle = $(".nav-title");
 let scrollY;
 
+// Team Selectors for desktop usage
+const desktopImgsContainer = $(".container-team-images");
+const desktopImgs = $(".desktop-team-img");
+const firstModalDesktop = $("#first-doctor");
+const secondModalDesktop = $("#second-doctor");
+const thirdModalDesktop = $("#third-doctor");
+const closeModalsTeam = $(".btn-close-modal-team")
+
+const nameDiv = $("#modal-name");
+const imagesTeam = $(".no-hover");
+const teamParagraph = $("#team-presentation");
+
+// Elements to hide on contact focus
+const teamSection = $(".team");
+const contactFormElements = $("#contact-form").elements;
+
 //Contact floating label
 let inputText = $("#full-name");
 let inputTextLabel = $("#full-name").previousElementSibling;
@@ -46,6 +62,8 @@ let inputMail = $("#email");
 let inputMailLabel = $("#email").previousElementSibling;
 let inputMessage = $("#message");
 let inputMessageLabel = $("#message").previousElementSibling;
+
+
 
 // ** FUNCTIONS **
 
@@ -62,8 +80,7 @@ function positionIndicator(position = firstPosition, width = firstWidth) {
 positionIndicator();
 
 function tabNavLinkEvent(e) {
-    let width = e.target.getBoundingClientRect().width;
-    positionIndicator(e.target.getBoundingClientRect().left, width);
+    positionIndicator(e.target.getBoundingClientRect().left, e.target.getBoundingClientRect().width);
 };
 
 function scrollPosition() {
@@ -95,7 +112,7 @@ function scrollPosition() {
 
 }
 
-// Dynamic nav
+//Dynamic nav
 const dynamicNav = () => {
     scrollY = window.scrollY;
     if (window.innerWidth > 450) {
@@ -109,11 +126,11 @@ const dynamicNav = () => {
     }
 }
 
-// Mobile menu nav
+//Mobile menu nav - open/close functions
 const openSlideMenu = () => sideMenu.classList.add("active");
 const closeSlideMenu = () => sideMenu.classList.remove("active");
 
-// Scroll Function
+//Scroll Function
 function scrollIt(element) {
     window.scrollTo({
         'behavior': 'smooth',
@@ -122,12 +139,13 @@ function scrollIt(element) {
     });
 }
 
+//Activate section item function
 const getActive = e => {
     e.target.nextElementSibling.classList.toggle("active");
     e.target.innerHTML = e.target.innerHTML === "+" ? "&times;" : "+"
 };
 
-// Create a showcase slider
+//Create a showcase slider
 new Swiper('.swiper-container', {
     pagination: {
         el: '.swiper-pagination',
@@ -138,7 +156,84 @@ new Swiper('.swiper-container', {
     },
 });
 
-// Contact floating label functions
+// Mobile modals with Modaly.js
+new Modaly("#modal-1", {
+    overlay: false,
+});
+new Modaly("#modal-2", {
+    overlay: false,
+});
+new Modaly("#modal-3", {
+    overlay: false,
+});
+
+// ** Team Modal Functions **
+
+//Open/close modals
+const openModals = (element) => {
+    element.classList.remove("hide")
+}
+
+const closeModal = e => {
+    e.target.parentElement.parentElement.classList.add("hide");
+    desktopImgsContainer.classList.remove("hide");
+    desktopImgs.forEach(element => {
+        element.classList.remove("hide");
+    })
+    teamParagraph.classList.remove("hide");
+    nameDiv.classList.remove("hide");
+}
+
+const hideImages = () => {
+    desktopImgsContainer.classList.add("hide");
+    desktopImgs.forEach(element => {
+        element.classList.add("hide");
+    })
+    teamParagraph.classList.add("hide");
+    nameDiv.classList.add("hide");
+}
+//Hover effect on images
+const hoverImages = (e) => {
+    e.target.classList.toggle("no-hover");
+}
+
+//Get Name with hover
+function getName(e) {
+    let content = e.target.getAttribute("name");
+    nameDiv.innerHTML = content;
+}
+
+//Get focus status and apply styles
+function isFocused() {
+    for (let i = 0; i < contactFormElements.length; i++) {
+        let elem = contactFormElements[i];
+        elem.focused = false;
+
+        elem.onfocus = function () {
+            this.focused = true;
+        };
+        elem.onblur = function () {
+            this.focused = false;
+        };
+
+        elem.hasFocus = function () {
+            return this.focused;
+        };
+    }
+}
+isFocused();
+
+function removeImages(e) {
+    if (window.innerWidth < 450) {
+        if (e.target.focused) {
+            teamSection.classList.add("hide");
+        } else {
+            teamSection.classList.remove("hide");
+        }
+    }
+}
+
+//Contact floating label functions
 function floatingLabel(element) {
     let testValue = element.nextElementSibling.value;
     if (testValue != '') {
@@ -150,12 +245,15 @@ function floatingLabel(element) {
 
 
 // ** Add functions **
+
+//Side menu open/close
 bindElement(openSlide, "click", openSlideMenu);
 bindElement(closeSlide, "click", closeSlideMenu);
+
+//Activate section items
 bindElements(closeModals, "click", getActive);
 
-
-//Side menu bind
+//Side menu bind to dynamic scroll
 bindElement(sideServices, "click", () => {
     scrollIt(positionServices);
     closeSlideMenu();
@@ -169,21 +267,12 @@ bindElement(sideContact, "click", () => {
     closeSlideMenu();
 })
 
-
 //Nav menu bind
 bindElement(navInicio, "click", () => scrollIt(positionLanding));
 bindElement(navLogo, "click", () => scrollIt(positionLanding));
 bindElement(navServices, "click", () => scrollIt(positionServices));
 bindElement(navTeam, "click", () => scrollIt(positionTeam));
 bindElement(navContact, "click", () => scrollIt(positionContact));
-
-//Scroll navbar
-bindElement(window, "scroll", dynamicNav);
-
-//Contact floating
-bindElement(inputText, "keyup", () => floatingLabel(inputTextLabel));
-bindElement(inputMail, "keyup", () => floatingLabel(inputMailLabel));
-bindElement(inputMessage, "keyup", () => floatingLabel(inputMessageLabel));
 
 //Underline state bar
 bindElements(navLinks, "click", tabNavLinkEvent);
@@ -197,3 +286,36 @@ bindElement(window, "resize", () => {
         currentLinkIndicator.style.display = "inline-block";
     }, 1000);
 });
+
+//Scroll navbar
+bindElement(window, "scroll", dynamicNav);
+
+//Team modals open/close + hover images effects
+bindElements(desktopImgs, "mouseover", hoverImages);
+bindElements(desktopImgs, "mouseout", hoverImages);
+bindElements(closeModalsTeam, "click", (element) => {
+    closeModal(element);
+});
+bindElement(firstModalDesktop, "click", () => {
+    openModals($("#first-modal-desktop"));
+    hideImages();
+});
+bindElement(secondModalDesktop, "click", () => {
+    openModals($("#second-modal-desktop"));
+    hideImages();
+});
+bindElement(thirdModalDesktop, "click", () => {
+    openModals($("#third-modal-desktop"));
+    hideImages();
+});
+
+bindElements(imagesTeam, "mouseover", getName);
+
+//Hide images while contact is focused
+bindElements(Array.from(contactFormElements), "focus", removeImages);
+bindElements(Array.from(contactFormElements), "blur", removeImages);
+
+//Floating contact
+bindElement(inputText, "keyup", () => floatingLabel(inputTextLabel));
+bindElement(inputMail, "keyup", () => floatingLabel(inputMailLabel));
+bindElement(inputMessage, "keyup", () => floatingLabel(inputMessageLabel));

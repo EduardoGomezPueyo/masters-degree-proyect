@@ -3,14 +3,13 @@ $clr-primary: #1b75c2;
 $primary-font-color: #000;
 $secondary-font-color:#fff;
 
-//Mixins
+//Mixins constructors
 @mixin background ($imgpath, $repeat: no-repeat, $size: cover) {
     background: {
         image: url($imgpath);
         repeat: $repeat;
         size: $size;
     }
-
 }
 
 // Fonts
@@ -56,6 +55,13 @@ body {
 a {
     text-decoration: none;
 
+}
+
+//General Classes
+.mobile-only {
+    @media (min-width:450px) {
+        display: none;
+    }
 }
 
 .clickable {
