@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url("../../fonts/OpenSans-Light.ttf");
+  src: url("../fonts/OpenSans-Light.ttf");
 }
 
 @font-face {
@@ -12,7 +12,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../../fonts/OpenSans-Regular.ttf");
+  src: url("../fonts/OpenSans-Regular.ttf");
 }
 
 @font-face {
@@ -20,7 +20,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("../../fonts/OpenSans-SemiBold.ttf");
+  src: url("../fonts/OpenSans-SemiBold.ttf");
 }
 
 *,
