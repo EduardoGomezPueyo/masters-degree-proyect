@@ -140,7 +140,7 @@
 
 .container-team-images {
     margin: 0 auto;
-    height: 100vh;
+    height: 70vh !important;
     width: 80vw;
     display: flex;
     border-bottom: 3px solid $clr-primary;
@@ -148,10 +148,6 @@
     align-items: flex-end;
     justify-content: space-around;
     cursor: pointer;
-}
-
-.img-name-team {
-    height: 100%;
 }
 
 .desktop-team-img {

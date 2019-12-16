@@ -731,7 +731,7 @@ a {
 
 .container-team-images {
   margin: 0 auto;
-  height: 100vh;
+  height: 70vh !important;
   width: 80vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -747,10 +747,6 @@ a {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   cursor: pointer;
-}
-
-.img-name-team {
-  height: 100%;
 }
 
 .desktop-team-img {
