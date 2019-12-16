@@ -67,7 +67,8 @@ let inputMessageLabel = $("#message").previousElementSibling;
 
 // ** FUNCTIONS **
 
-//Underline Nav
+// Underline Nav
+// Determines position of the underline bar that indicates place on the web
 function positionIndicator(position = firstPosition, width = firstWidth) {
     currentLinkIndicator.style.transform =
         "translate3d(" +
@@ -83,6 +84,7 @@ function tabNavLinkEvent(e) {
     positionIndicator(e.target.getBoundingClientRect().left, e.target.getBoundingClientRect().width);
 };
 
+// Sets navbar underline position based on window scroll
 function scrollPosition() {
     let scrollY = window.scrollY;
     let positionServices = $("#services").offsetTop;
@@ -109,10 +111,10 @@ function scrollPosition() {
         let width = navLinks[0].getBoundingClientRect().width;
         positionIndicator(position, width)
     }
-
 }
 
-//Dynamic nav
+// Dynamic nav
+// Makes navbar smaller when scrolled past landing state
 const dynamicNav = () => {
     scrollY = window.scrollY;
     if (window.innerWidth > 450) {
@@ -126,11 +128,12 @@ const dynamicNav = () => {
     }
 }
 
-//Mobile menu nav - open/close functions
+// Mobile menu nav - open/close functions
 const openSlideMenu = () => sideMenu.classList.add("active");
 const closeSlideMenu = () => sideMenu.classList.remove("active");
 
-//Scroll Function
+// Scroll Function
+// Creates a dynamic scroll to the cicked section
 function scrollIt(element) {
     window.scrollTo({
         'behavior': 'smooth',
@@ -139,13 +142,13 @@ function scrollIt(element) {
     });
 }
 
-//Activate section item function
+// Activate section-item function
 const getActive = e => {
     e.target.nextElementSibling.classList.toggle("active");
     e.target.innerHTML = e.target.innerHTML === "+" ? "&times;" : "+"
 };
 
-//Create a showcase slider
+// Create a showcase slider
 new Swiper('.swiper-container', {
     pagination: {
         el: '.swiper-pagination',
@@ -167,9 +170,10 @@ new Modaly("#modal-3", {
     overlay: false,
 });
 
+
 // ** Team Modal Functions **
 
-//Open/close modals
+// Open/close modals
 const openModals = (element) => {
     element.classList.remove("hide")
 }
@@ -192,18 +196,21 @@ const hideImages = () => {
     teamParagraph.classList.add("hide");
     nameDiv.classList.add("hide");
 }
-//Hover effect on images
-const hoverImages = (e) => {
+
+// Hover effect on images
+const hoverImages = e => {
     e.target.classList.toggle("no-hover");
 }
 
-//Get Name with hover
+// Get Name with hover
+// Displays doctor's name when hovered
 function getName(e) {
     let content = e.target.getAttribute("name");
     nameDiv.innerHTML = content;
 }
 
-//Get focus status and apply styles
+// Get focus status and apply styles
+// Sets focused state for the input areas in contact section
 function isFocused() {
     for (let i = 0; i < contactFormElements.length; i++) {
         let elem = contactFormElements[i];
@@ -222,7 +229,7 @@ function isFocused() {
     }
 }
 isFocused();
-
+// Removes images from team section when an element from the contact form is focused
 function removeImages(e) {
     if (window.innerWidth < 450) {
         if (e.target.focused) {
@@ -233,7 +240,7 @@ function removeImages(e) {
     }
 }
 
-//Contact floating label functions
+//Contact floating label 
 function floatingLabel(element) {
     let testValue = element.nextElementSibling.value;
     if (testValue != '') {
